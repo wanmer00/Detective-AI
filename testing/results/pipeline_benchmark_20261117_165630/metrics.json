@@ -1,0 +1,555 @@
+{
+ "before": {
+  "1 all originals": {
+   "n": 54,
+   "ai": 19,
+   "not_ai": 35,
+   "TP": 13,
+   "FN_reported_real": 4,
+   "FN_inconclusive": 2,
+   "FP": 0,
+   "TN": 29,
+   "inconclusive": 8,
+   "accuracy": 0.593,
+   "precision": 1.0,
+   "recall": 0.684,
+   "f1": 0.813,
+   "fpr": 0.0,
+   "fnr": 0.316,
+   "false_real_rate": 0.211,
+   "inconclusive_rate": 0.148,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "AI_GENERATED": {
+     "inconclusive": 2,
+     "ai_likely": 13,
+     "not_ai": 3
+    },
+    "MANUALLY_EDITED": {
+     "not_ai": 9,
+     "inconclusive": 2
+    },
+    "REAL": {
+     "manipulated_possible": 1,
+     "not_ai": 18,
+     "inconclusive": 4,
+     "authentic_likely": 1
+    }
+   }
+  },
+  "2 independent of model selection (user batch + regression)": {
+   "n": 24,
+   "ai": 9,
+   "not_ai": 15,
+   "TP": 5,
+   "FN_reported_real": 4,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 12,
+   "inconclusive": 3,
+   "accuracy": 0.667,
+   "precision": 1.0,
+   "recall": 0.556,
+   "f1": 0.714,
+   "fpr": 0.0,
+   "fnr": 0.444,
+   "false_real_rate": 0.444,
+   "inconclusive_rate": 0.125,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "AI_GENERATED": {
+     "not_ai": 3,
+     "ai_likely": 5
+    },
+    "MANUALLY_EDITED": {
+     "not_ai": 1
+    },
+    "REAL": {
+     "not_ai": 10,
+     "inconclusive": 3,
+     "authentic_likely": 1
+    }
+   }
+  },
+  "3 eval_set (used to pick SwinV2: biased)": {
+   "n": 20,
+   "ai": 10,
+   "not_ai": 10,
+   "TP": 8,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 2,
+   "FP": 0,
+   "TN": 9,
+   "inconclusive": 3,
+   "accuracy": 0.8,
+   "precision": 1.0,
+   "recall": 0.8,
+   "f1": 0.889,
+   "fpr": 0.0,
+   "fnr": 0.2,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.15,
+   "confusion": {
+    "AI_GENERATED": {
+     "inconclusive": 2,
+     "ai_likely": 8
+    },
+    "REAL": {
+     "manipulated_possible": 1,
+     "not_ai": 8,
+     "inconclusive": 1
+    }
+   }
+  },
+  "4 re-compressed JPEG q70": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 6,
+   "FN_reported_real": 7,
+   "FN_inconclusive": 5,
+   "FP": 0,
+   "TN": 22,
+   "inconclusive": 7,
+   "accuracy": 0.667,
+   "precision": 1.0,
+   "recall": 0.333,
+   "f1": 0.5,
+   "fpr": 0.0,
+   "fnr": 0.667,
+   "false_real_rate": 0.389,
+   "inconclusive_rate": 0.167,
+   "confusion": {
+    "AI_GENERATED": {
+     "not_ai": 7,
+     "ai_likely": 6,
+     "inconclusive": 5
+    },
+    "REAL": {
+     "not_ai": 22,
+     "inconclusive": 2
+    }
+   }
+  },
+  "5 messenger-like 320 px + JPEG q85": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 7,
+   "FN_reported_real": 6,
+   "FN_inconclusive": 5,
+   "FP": 0,
+   "TN": 19,
+   "inconclusive": 10,
+   "accuracy": 0.619,
+   "precision": 1.0,
+   "recall": 0.389,
+   "f1": 0.56,
+   "fpr": 0.0,
+   "fnr": 0.611,
+   "false_real_rate": 0.333,
+   "inconclusive_rate": 0.238,
+   "confusion": {
+    "AI_GENERATED": {
+     "not_ai": 6,
+     "ai_likely": 7,
+     "inconclusive": 5
+    },
+    "REAL": {
+     "inconclusive": 5,
+     "not_ai": 19
+    }
+   }
+  },
+  "6 resized to 512 px": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 11,
+   "FN_reported_real": 3,
+   "FN_inconclusive": 4,
+   "FP": 0,
+   "TN": 19,
+   "inconclusive": 9,
+   "accuracy": 0.714,
+   "precision": 1.0,
+   "recall": 0.611,
+   "f1": 0.759,
+   "fpr": 0.0,
+   "fnr": 0.389,
+   "false_real_rate": 0.167,
+   "inconclusive_rate": 0.214,
+   "confusion": {
+    "AI_GENERATED": {
+     "inconclusive": 4,
+     "ai_likely": 11,
+     "not_ai": 3
+    },
+    "REAL": {
+     "inconclusive": 5,
+     "not_ai": 19
+    }
+   }
+  },
+  "7 all degraded variants": {
+   "n": 126,
+   "ai": 54,
+   "not_ai": 72,
+   "TP": 24,
+   "FN_reported_real": 16,
+   "FN_inconclusive": 14,
+   "FP": 0,
+   "TN": 60,
+   "inconclusive": 26,
+   "accuracy": 0.667,
+   "precision": 1.0,
+   "recall": 0.444,
+   "f1": 0.615,
+   "fpr": 0.0,
+   "fnr": 0.556,
+   "false_real_rate": 0.296,
+   "inconclusive_rate": 0.206,
+   "confusion": {
+    "AI_GENERATED": {
+     "not_ai": 16,
+     "inconclusive": 14,
+     "ai_likely": 24
+    },
+    "REAL": {
+     "not_ai": 60,
+     "inconclusive": 12
+    }
+   }
+  },
+  "8 Photoshop-style manual edits (edit_set)": {
+   "n": 10,
+   "ai": 0,
+   "not_ai": 10,
+   "TP": 0,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 8,
+   "inconclusive": 2,
+   "accuracy": 0.0,
+   "precision": null,
+   "recall": null,
+   "f1": null,
+   "fpr": 0.0,
+   "fnr": null,
+   "false_real_rate": null,
+   "inconclusive_rate": 0.2,
+   "confusion": {
+    "MANUALLY_EDITED": {
+     "not_ai": 8,
+     "inconclusive": 2
+    }
+   }
+  },
+  "9 user-batch edited images (AI_EDITED + MANUALLY_EDITED)": {
+   "n": 2,
+   "ai": 1,
+   "not_ai": 1,
+   "TP": 0,
+   "FN_reported_real": 1,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 1,
+   "inconclusive": 0,
+   "accuracy": 0.0,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "fpr": 0.0,
+   "fnr": 1.0,
+   "false_real_rate": 1.0,
+   "inconclusive_rate": 0.0,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "MANUALLY_EDITED": {
+     "not_ai": 1
+    }
+   }
+  }
+ },
+ "after": {
+  "1 all originals": {
+   "n": 54,
+   "ai": 19,
+   "not_ai": 35,
+   "TP": 15,
+   "FN_reported_real": 1,
+   "FN_inconclusive": 3,
+   "FP": 1,
+   "TN": 27,
+   "inconclusive": 10,
+   "accuracy": 0.574,
+   "precision": 0.938,
+   "recall": 0.789,
+   "f1": 0.857,
+   "fpr": 0.029,
+   "fnr": 0.211,
+   "false_real_rate": 0.053,
+   "inconclusive_rate": 0.185,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "AI_GENERATED": {
+     "ai_likely": 15,
+     "inconclusive": 3
+    },
+    "MANUALLY_EDITED": {
+     "inconclusive": 1,
+     "not_ai": 10
+    },
+    "REAL": {
+     "manipulated_possible": 1,
+     "not_ai": 15,
+     "inconclusive": 6,
+     "ai_likely": 1,
+     "authentic_likely": 1
+    }
+   }
+  },
+  "2 independent of model selection (user batch + regression)": {
+   "n": 24,
+   "ai": 9,
+   "not_ai": 15,
+   "TP": 5,
+   "FN_reported_real": 1,
+   "FN_inconclusive": 3,
+   "FP": 1,
+   "TN": 7,
+   "inconclusive": 10,
+   "accuracy": 0.5,
+   "precision": 0.833,
+   "recall": 0.556,
+   "f1": 0.667,
+   "fpr": 0.067,
+   "fnr": 0.444,
+   "false_real_rate": 0.111,
+   "inconclusive_rate": 0.417,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "AI_GENERATED": {
+     "inconclusive": 3,
+     "ai_likely": 5
+    },
+    "MANUALLY_EDITED": {
+     "inconclusive": 1
+    },
+    "REAL": {
+     "not_ai": 6,
+     "inconclusive": 6,
+     "ai_likely": 1,
+     "authentic_likely": 1
+    }
+   }
+  },
+  "3 eval_set (used to pick SwinV2: biased)": {
+   "n": 20,
+   "ai": 10,
+   "not_ai": 10,
+   "TP": 10,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 10,
+   "inconclusive": 0,
+   "accuracy": 0.95,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "fpr": 0.0,
+   "fnr": 0.0,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.0,
+   "confusion": {
+    "AI_GENERATED": {
+     "ai_likely": 10
+    },
+    "REAL": {
+     "manipulated_possible": 1,
+     "not_ai": 9
+    }
+   }
+  },
+  "4 re-compressed JPEG q70": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 10,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 8,
+   "FP": 0,
+   "TN": 0,
+   "inconclusive": 32,
+   "accuracy": 0.238,
+   "precision": 1.0,
+   "recall": 0.556,
+   "f1": 0.714,
+   "fpr": 0.0,
+   "fnr": 0.444,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.762,
+   "confusion": {
+    "AI_GENERATED": {
+     "inconclusive": 8,
+     "ai_likely": 10
+    },
+    "REAL": {
+     "inconclusive": 24
+    }
+   }
+  },
+  "5 messenger-like 320 px + JPEG q85": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 8,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 10,
+   "FP": 1,
+   "TN": 0,
+   "inconclusive": 33,
+   "accuracy": 0.19,
+   "precision": 0.889,
+   "recall": 0.444,
+   "f1": 0.593,
+   "fpr": 0.042,
+   "fnr": 0.556,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.786,
+   "confusion": {
+    "AI_GENERATED": {
+     "inconclusive": 10,
+     "ai_likely": 8
+    },
+    "REAL": {
+     "inconclusive": 23,
+     "ai_likely": 1
+    }
+   }
+  },
+  "6 resized to 512 px": {
+   "n": 42,
+   "ai": 18,
+   "not_ai": 24,
+   "TP": 14,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 4,
+   "FP": 1,
+   "TN": 20,
+   "inconclusive": 7,
+   "accuracy": 0.81,
+   "precision": 0.933,
+   "recall": 0.778,
+   "f1": 0.848,
+   "fpr": 0.042,
+   "fnr": 0.222,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.167,
+   "confusion": {
+    "AI_GENERATED": {
+     "ai_likely": 14,
+     "inconclusive": 4
+    },
+    "REAL": {
+     "not_ai": 20,
+     "inconclusive": 3,
+     "ai_likely": 1
+    }
+   }
+  },
+  "7 all degraded variants": {
+   "n": 126,
+   "ai": 54,
+   "not_ai": 72,
+   "TP": 32,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 22,
+   "FP": 2,
+   "TN": 20,
+   "inconclusive": 72,
+   "accuracy": 0.413,
+   "precision": 0.941,
+   "recall": 0.593,
+   "f1": 0.727,
+   "fpr": 0.028,
+   "fnr": 0.407,
+   "false_real_rate": 0.0,
+   "inconclusive_rate": 0.571,
+   "confusion": {
+    "AI_GENERATED": {
+     "inconclusive": 22,
+     "ai_likely": 32
+    },
+    "REAL": {
+     "inconclusive": 50,
+     "not_ai": 20,
+     "ai_likely": 2
+    }
+   }
+  },
+  "8 Photoshop-style manual edits (edit_set)": {
+   "n": 10,
+   "ai": 0,
+   "not_ai": 10,
+   "TP": 0,
+   "FN_reported_real": 0,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 10,
+   "inconclusive": 0,
+   "accuracy": 0.0,
+   "precision": null,
+   "recall": null,
+   "f1": null,
+   "fpr": 0.0,
+   "fnr": null,
+   "false_real_rate": null,
+   "inconclusive_rate": 0.0,
+   "confusion": {
+    "MANUALLY_EDITED": {
+     "not_ai": 10
+    }
+   }
+  },
+  "9 user-batch edited images (AI_EDITED + MANUALLY_EDITED)": {
+   "n": 2,
+   "ai": 1,
+   "not_ai": 1,
+   "TP": 0,
+   "FN_reported_real": 1,
+   "FN_inconclusive": 0,
+   "FP": 0,
+   "TN": 0,
+   "inconclusive": 1,
+   "accuracy": 0.0,
+   "precision": null,
+   "recall": 0.0,
+   "f1": null,
+   "fpr": 0.0,
+   "fnr": 1.0,
+   "false_real_rate": 1.0,
+   "inconclusive_rate": 0.5,
+   "confusion": {
+    "AI_EDITED": {
+     "not_ai": 1
+    },
+    "MANUALLY_EDITED": {
+     "inconclusive": 1
+    }
+   }
+  }
+ }
+}

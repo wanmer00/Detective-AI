@@ -1,0 +1,5 @@
+﻿ground_truth \ predicted,Likely AI-generated,Likely authentic,No AI detected,Potential manipulation,Inconclusive,total
+REAL,0,1,10,0,3,14
+AI_GENERATED,5,0,2,0,0,7
+AI_EDITED,0,0,1,0,0,1
+MANUALLY_EDITED,0,0,1,0,0,1

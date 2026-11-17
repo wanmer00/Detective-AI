@@ -1,0 +1,11 @@
+[
+  {
+    "id": "REG-001",
+    "file": "known_ai_generated.jpg",
+    "ground_truth": "AI_GENERATED",
+    "sha256": "56d45c313e1d452731c152e010e9ae4aa9eb94969f5f062bd17d5fe29b8d25d0",
+    "provenance": "Reported by the user on 17-Nov-2026 as a known AI-generated image. Received via WhatsApp (file name 'WhatsApp Image 2026-11-17 at 15.58.27.jpeg'): 320x179 px, JPEG q~85, no EXIF, no C2PA.",
+    "original_verdict": "not_ai (SwinV2 median 0.0103, all 7 views low) - false negative, scan TL-2C8FE7A78767",
+    "notes": "Regression test only. Never referenced by production code."
+  }
+]

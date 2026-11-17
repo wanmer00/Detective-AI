@@ -1,0 +1,186 @@
+{
+ "summary": {
+  "Ateeqq/ai-vs-human-image-detector": [
+   "original: acc=0.75 AI-recall=0.80 false-AI-on-real=0.30",
+   "recompressed: acc=0.75 AI-recall=0.80 false-AI-on-real=0.30"
+  ],
+  "haywoodsloan/ai-image-detector-deploy": [
+   "original: acc=0.80 AI-recall=0.80 false-AI-on-real=0.20",
+   "recompressed: acc=0.80 AI-recall=0.80 false-AI-on-real=0.20"
+  ],
+  "Organika/sdxl-detector": [
+   "original: acc=0.55 AI-recall=0.50 false-AI-on-real=0.40",
+   "recompressed: acc=0.65 AI-recall=0.70 false-AI-on-real=0.40"
+  ],
+  "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": [
+   "original: acc=0.50 AI-recall=1.00 false-AI-on-real=1.00",
+   "recompressed: acc=0.50 AI-recall=1.00 false-AI-on-real=1.00"
+  ],
+  "Smogy/SMOGY-Ai-images-detector": [
+   "original: acc=0.80 AI-recall=0.70 false-AI-on-real=0.10",
+   "recompressed: acc=0.80 AI-recall=0.80 false-AI-on-real=0.20"
+  ]
+ },
+ "per_image": {
+  "00_real_landscape_hopetoun_falls.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.001,
+   "haywoodsloan/ai-image-detector-deploy": 0.995,
+   "Organika/sdxl-detector": 0.006,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "01_real_portrait_armstrong.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.001,
+   "Organika/sdxl-detector": 0.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.078
+  },
+  "02_ai_stable_diffusion_comet.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 0.999,
+   "haywoodsloan/ai-image-detector-deploy": 0.035,
+   "Organika/sdxl-detector": 0.033,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "03_ai_artwork_mountains.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 1.0,
+   "Organika/sdxl-detector": 0.999,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 0.999,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "ai_Images_generated_b_1.png": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 1.0,
+   "Organika/sdxl-detector": 0.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "ai_Images_generated_b_2.png": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.925,
+   "Organika/sdxl-detector": 0.231,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "ai_Images_generated_b_3.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 1.0,
+   "Organika/sdxl-detector": 1.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "ai_Images_generated_b_4.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 0.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.45,
+   "Organika/sdxl-detector": 1.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "ai_Images_generated_b_5.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 1.0,
+   "Organika/sdxl-detector": 0.993,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "ai_Images_generated_b_0.png": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.998,
+   "Organika/sdxl-detector": 0.081,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.146
+  },
+  "ai_Images_generated_b_1.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 0.001,
+   "haywoodsloan/ai-image-detector-deploy": 1.0,
+   "Organika/sdxl-detector": 1.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 1.0
+  },
+  "user_TL-DAB7E77C91C4.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.998,
+   "haywoodsloan/ai-image-detector-deploy": 0.0,
+   "Organika/sdxl-detector": 0.997,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "user_TL-693377B71DEA.jpg": {
+   "label": "ai",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.999,
+   "Organika/sdxl-detector": 0.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.001
+  },
+  "real_people_7.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.002,
+   "Organika/sdxl-detector": 0.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "real_people_6.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.02,
+   "Organika/sdxl-detector": 0.963,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.497
+  },
+  "real_people_5.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.001,
+   "haywoodsloan/ai-image-detector-deploy": 0.984,
+   "Organika/sdxl-detector": 0.996,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.044
+  },
+  "real_people_4.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 1.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.002,
+   "Organika/sdxl-detector": 0.993,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.999
+  },
+  "real_people_3.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.133,
+   "haywoodsloan/ai-image-detector-deploy": 0.018,
+   "Organika/sdxl-detector": 0.001,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "real_people_2.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.0,
+   "haywoodsloan/ai-image-detector-deploy": 0.002,
+   "Organika/sdxl-detector": 0.002,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  },
+  "real_people_1.jpg": {
+   "label": "real",
+   "Ateeqq/ai-vs-human-image-detector": 0.001,
+   "haywoodsloan/ai-image-detector-deploy": 0.0,
+   "Organika/sdxl-detector": 0.0,
+   "prithivMLmods/AI-vs-Deepfake-vs-Real-Siglip2": 1.0,
+   "Smogy/SMOGY-Ai-images-detector": 0.0
+  }
+ }
+}

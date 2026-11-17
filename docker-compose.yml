@@ -1,0 +1,32 @@
+# Optional containerised run (CPU inference). Native Windows setup in README is the tested path.
+services:
+  truthlens:
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:20-slim AS web
+        WORKDIR /w
+        COPY frontend/package*.json ./
+        RUN npm ci
+        COPY frontend/ ./
+        RUN npm run build
+
+        FROM python:3.12-slim
+        WORKDIR /app/backend
+        RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 fonts-dejavu-core && rm -rf /var/lib/apt/lists/*
+        COPY backend/requirements.txt .
+        RUN pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu && pip install --no-cache-dir -r requirements.txt
+        COPY backend/ .
+        COPY sample_images/ /app/sample_images/
+        COPY --from=web /w/dist /app/frontend/dist
+        COPY frontend/src/locales /app/frontend/src/locales
+        RUN TRUTHLENS_OFFLINE=false python scripts/download_models.py
+        EXPOSE 8000
+        CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    ports: ["8000:8000"]
+    environment:
+      TRUTHLENS_DEVICE: cpu
+    volumes:
+      - truthlens-data:/app/backend/data
+volumes:
+  truthlens-data:

@@ -1,0 +1,21 @@
+# Install torch first for GPU:  pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+torch>=2.4
+torchvision
+transformers>=4.49
+timm>=1.0         # Community Forensics ViT-S/16-384 detectors
+safetensors
+huggingface_hub
+fastapi
+uvicorn[standard]
+pydantic>=2
+pydantic-settings
+sqlalchemy>=2.0,<2.1  # 2.1 removed the pure-Python fallback needed under Windows Smart App Control
+python-multipart
+pillow>=11.3      # AVIF decoding
+pillow-heif       # HEIC/HEIF (iPhone photos)
+opencv-python-headless
+numpy
+reportlab
+c2pa-python
+pytest
+httpx

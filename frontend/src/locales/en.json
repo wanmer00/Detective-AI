@@ -1,0 +1,972 @@
+{
+  "lang": {
+    "label": "Language",
+    "en": "EN",
+    "ru": "RU",
+    "az": "AZ",
+    "name_en": "English",
+    "name_ru": "Русский",
+    "name_az": "Azərbaycanca"
+  },
+  "common": {
+    "loading": "Loading…",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "newScan": "New scan",
+    "backToHistory": "Back to history",
+    "demoSample": "demo sample",
+    "unavailable": "unavailable",
+    "na": "n/a",
+    "notFoundPage": "Page not found.",
+    "analyzeImage": "Analyze an Image",
+    "howItWorks": "How it works",
+    "none": "none"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "scanner": "Scanner",
+    "history": "History",
+    "methodology": "Methodology",
+    "status": "System status",
+    "menu": "Menu"
+  },
+  "health": {
+    "offline": "Backend offline",
+    "checking": "Checking…",
+    "ready": "Detectors ready",
+    "degraded": "Degraded"
+  },
+  "footer": {
+    "text": "{app} · OYU CyberAI Hackathon 2026 · Results are indicators, not proof.",
+    "short": "{app} · OYU CyberAI Hackathon 2026"
+  },
+  "landing": {
+    "badge": "Local inference · No images leave this machine",
+    "titleA": "Image authenticity,",
+    "titleB": "backed by evidence.",
+    "lead": "{app} combines two independent families of pretrained AI-image detectors, metadata and provenance forensics, error-level analysis and face analysis into one transparent report — showing what each signal found, where they disagree, and what remains uncertain.",
+    "howLabel": "How it works",
+    "howTitle": "Four stages, one auditable pipeline",
+    "steps": {
+      "upload": {
+        "t": "Upload",
+        "d": "Drop a JPG, PNG, WEBP, HEIC or AVIF file. It is validated, hashed (SHA-256) and decoded safely in memory."
+      },
+      "analyse": {
+        "t": "Analyse",
+        "d": "Two benchmarked detector families (SwinV2 and Community Forensics), metadata and provenance checks, error-level analysis and face analysis run locally."
+      },
+      "aggregate": {
+        "t": "Aggregate",
+        "d": "A transparent rule engine weighs each signal and tells you exactly which rules produced the verdict."
+      },
+      "report": {
+        "t": "Report",
+        "d": "Get a forensic report with evidence for and against, limitations and a downloadable PDF."
+      }
+    },
+    "capsLabel": "Analysis capabilities",
+    "capsTitle": "Independent signals, not a single black box",
+    "caps": {
+      "ai": {
+        "t": "AI-generation detection",
+        "d": "SwinV2 plus the Community Forensics family, chosen by benchmarking on labelled images. Each votes separately; disagreement is shown, never averaged away."
+      },
+      "meta": {
+        "t": "Metadata forensics",
+        "d": "EXIF, XMP, PNG text chunks, IPTC DigitalSourceType and embedded generator parameters."
+      },
+      "c2pa": {
+        "t": "C2PA provenance",
+        "d": "Reads Content Credentials manifests: who signed them, whether they declare AI generation and whether the signature is intact."
+      },
+      "ela": {
+        "t": "Error level analysis",
+        "d": "JPEG re-compression residuals and quality estimation highlight regions that compress differently."
+      },
+      "faces": {
+        "t": "Face analysis",
+        "d": "YuNet face detection plus a ViT face-manipulation classifier applied to each detected face crop."
+      },
+      "saliency": {
+        "t": "Model saliency",
+        "d": "Occlusion-sensitivity maps computed from the detector itself — never decorative heatmaps."
+      }
+    },
+    "techLabel": "Technology",
+    "techTitle": "Open models, running on your hardware",
+    "techText": "All model weights are open-licensed and downloaded once. After setup {app} runs fully offline — uploads are processed in memory and never sent to third-party services.",
+    "tech": {
+      "i1": "PyTorch · Transformers",
+      "i2": "SwinV2 (Apache-2.0) + Community Forensics ViT (MIT) AI detectors",
+      "i3": "Rule-based evidence engine",
+      "i4": "ViT face-manipulation classifier (Apache-2.0)",
+      "i5": "OpenCV YuNet face detector",
+      "i6": "FastAPI · SQLite · ReportLab",
+      "i7": "React · TypeScript · Tailwind",
+      "i8": "C2PA · EXIF · XMP parsing"
+    },
+    "disclaimerTitle": "Responsible AI disclaimer",
+    "disclaimer": "No detector can guarantee that an image is authentic or AI-generated. Detector scores are model outputs, not calibrated probabilities. Missing metadata is not evidence of generation, and metadata can be forged. Use {app} as one input to a human verification process — never as the sole basis for an accusation or decision."
+  },
+  "dashboard": {
+    "label": "Overview",
+    "title": "Dashboard",
+    "subtitle": "All figures are computed live from the scan database.",
+    "newAnalysis": "New analysis",
+    "loadError": "Could not load statistics: {error}",
+    "tiles": {
+      "total": "Total analyses",
+      "ai": "AI-likely",
+      "authentic": "Likely authentic",
+      "notAi": "No AI detected",
+      "manip": "Possible manipulation",
+      "inconclusive": "Inconclusive",
+      "aiEdited": "AI-edited"
+    },
+    "recent": "Recent scans",
+    "viewAll": "View full history",
+    "empty": "No analyses yet.",
+    "emptyCta": "Analyze your first image",
+    "aiScore": "AI {score}",
+    "confidence": "confidence: {level}"
+  },
+  "scanner": {
+    "label": "Image scanner",
+    "title": "Analyze an image",
+    "subtitle": "JPG, PNG, WEBP, HEIC (iPhone) or AVIF up to {mb} MB. Processed locally; the original file is never stored.",
+    "drop": "Drop an image here",
+    "or": "or",
+    "browse": "browse files",
+    "previewAlt": "Preview",
+    "noPreview": "Your browser cannot preview {ext} files.",
+    "noPreviewNote": "The server decodes it and keeps all camera metadata for analysis.",
+    "replace": "Replace",
+    "remove": "Remove",
+    "analyze": "Analyze",
+    "progress": "Analysis progress",
+    "idle": "Select an image and press Analyze. Each stage below runs on the server.",
+    "upload": "Upload",
+    "uploading": "Uploading…",
+    "inProgress": "Server analysis in progress ({s} s)",
+    "stages": {
+      "validate": "Validating and hashing the file",
+      "metadata": "Extracting metadata and C2PA",
+      "detect": "Running the AI-image detectors",
+      "saliency": "Computing the occlusion saliency map",
+      "ela": "Error level analysis",
+      "faces": "Face detection and analysis",
+      "aggregate": "Aggregating evidence"
+    },
+    "timingsNote": "Actual per-stage timings are shown in the report.",
+    "samples": "Demo samples",
+    "noSamples": "No demo samples installed.",
+    "samplesNote": "Samples run through exactly the same pipeline as uploads. Provenance is documented in sample_images/README.md."
+  },
+  "samples": {
+    "edited-camera": {
+      "title": "Hopetoun Falls (camera photo, edited in Photoshop)",
+      "category": "Edited camera photo — timeline showcase"
+    },
+    "real-people": {
+      "title": "Broadstairs Folk Week (street photo)",
+      "category": "Genuine photograph"
+    },
+    "real-portrait": {
+      "title": "Neil Armstrong NASA portrait",
+      "category": "Genuine photograph (face)"
+    },
+    "ai-zvd": {
+      "title": "AI images ZvD 01 (Stable Diffusion)",
+      "category": "AI-generated"
+    },
+    "ai-mountains": {
+      "title": "Man in a mountain range (AI)",
+      "category": "AI-generated (photorealistic)"
+    }
+  },
+  "results": {
+    "loading": "Loading report…",
+    "history": "History",
+    "viewReport": "View report",
+    "download": "Download evidence report (PDF)",
+    "caseLabel": "Forensic case",
+    "evidenceItem": "Evidence item:",
+    "receivedLabel": "Received:",
+    "sections": {
+      "assessment": "Authenticity assessment",
+      "signals": "Detected signals",
+      "evidence": "Forensic evidence",
+      "metadata": "Technical metadata",
+      "limitations": "Analysis limitations"
+    },
+    "evidenceStrength": "Evidence strength:",
+    "signalsExamined": "{n} signals examined",
+    "detectorsProduced": "{ok}/{total} AI detectors produced results",
+    "howReached": "How this conclusion was reached",
+    "indicator": "AI-generation indicator",
+    "rawNote": "Raw model output (median of 7 views), not a calibrated probability.",
+    "noReliable": "No reliable score",
+    "notDetermined": "Not determined",
+    "unstableText": "The detector contradicts itself across views of this image, so no score is reported.",
+    "noConsistent": "No consistent detector output.",
+    "lowResCause": "Likely cause: the image is only {w}×{h} px. Its parts are smaller than the detector's 256-px input, so they must be upscaled, which confuses the model. Upload the largest or original version if you have it.",
+    "countAi": "point to AI",
+    "countCam": "point to camera",
+    "countEdit": "processing / edit",
+    "evFor": "Evidence for AI generation",
+    "evAgainst": "Evidence against AI generation",
+    "evEdit": "Processing and editing indicators",
+    "noneFound": "None found.",
+    "nextSteps": "Recommended next steps",
+    "signalsHint": "Each signal is measured independently. Click a row for its meaning.",
+    "noSignals": "This scan was made before signal analysis existed. Re-run the image to see it.",
+    "whatMeans": "What this means:",
+    "perView": "{model} — per-view scores",
+    "stable": "stable",
+    "unstable": "unstable",
+    "viewsAgree": "{pct}% of views agree · median used",
+    "timeline": "Forensic timeline",
+    "noTimeline": "The timeline is not available for this older scan.",
+    "timezone": "Time zone: {tz}.",
+    "checks": "Consistency checks",
+    "visual": "Visual evidence",
+    "vis": {
+      "original": "Original",
+      "saliency": "Detector saliency (occlusion)",
+      "faces": "Face detection",
+      "ela": "Error level analysis"
+    },
+    "visNote": {
+      "original": "Re-encoded preview; metadata stripped.",
+      "saliency": "Warmer = blurring this region lowered the detector's AI score the most. Computed from the model, not decorative.",
+      "faces": "Boxes from YuNet. Red = face-manipulation classifier score ≥ 0.85.",
+      "ela": "Brighter = larger JPEG re-compression error. Textures and edges are naturally bright; look for inconsistent regions."
+    },
+    "saliencyNotLocal": "Saliency: no region changed the score by more than 0.02 — the decision is not localised.",
+    "faceAnalysis": "Face analysis",
+    "faceDetector": "Detector: {name}",
+    "faceClassifier": "Classifier: {name}",
+    "noFaces": "No faces detected.",
+    "colBox": "Box",
+    "colDet": "Det.",
+    "colManip": "Manip. score",
+    "flagged": "flagged",
+    "evidenceItemCard": "Evidence item",
+    "caseId": "Case / scan ID",
+    "filename": "Filename",
+    "received": "Received",
+    "format": "Format",
+    "dimensions": "Dimensions",
+    "size": "Size",
+    "bytes": "{n} bytes",
+    "jpegQ": "JPEG quality",
+    "jpegTables": "~{q} ({n} tables)",
+    "ela": "ELA",
+    "elaValue": "mean {mean} · p99 {p99} · non-uniformity {nu}",
+    "noise": "Noise residual σ",
+    "sharpness": "Sharpness",
+    "processing": "Processing",
+    "embedded": "Embedded metadata",
+    "exif": "EXIF",
+    "exifFields": "{n} fields",
+    "camera": "Camera",
+    "software": "Software",
+    "creatorTool": "Creator tool (XMP)",
+    "editSw": "Editing software",
+    "noneDetected": "none detected",
+    "xmp": "XMP",
+    "xmpPresent": "present",
+    "xmpWithHistory": "present (with edit history)",
+    "tzOffsets": "Time-zone offsets",
+    "aiMarkers": "AI markers",
+    "c2pa": "C2PA",
+    "c2paPresent": "present",
+    "c2paNotFound": "not found",
+    "exiftool": "ExifTool",
+    "exiftoolTags": "{n} tags",
+    "exiftoolMissing": "not installed (Pillow parser)",
+    "rawExif": "Raw EXIF fields",
+    "pngChunks": "PNG text chunks",
+    "models": "Models used",
+    "faceLoc": "face localisation",
+    "faceManipModel": "face-manipulation classifier · Apache-2.0",
+    "faceDetUnavailable": "face detector unavailable",
+    "none": "none",
+    "detectionConfidence": "Detection confidence",
+    "confNote": "Agreement between independent detector families — not a probability. None of the detectors is calibrated on validated data, so no calibrated probability is reported.",
+    "confText": {
+      "high": "All {total} independent detector families agree: {direction}.",
+      "moderate": "{n} of {total} detector families decided ({direction}); the other could not decide.",
+      "limited": "Only one detector family produced a decision ({direction}).",
+      "conflict": "The detector families contradict each other — see the detector table.",
+      "none": "No detector family reached a decision."
+    },
+    "dirAi": "AI-generated",
+    "dirReal": "not AI-generated",
+    "calProb": "Calibrated probability: not available.",
+    "detectorsTitle": "Individual detector findings",
+    "colDetector": "Detector",
+    "colDecision": "Decision",
+    "colScore": "Score",
+    "colRule": "Decision rule · input",
+    "familyLabel": "{family} family",
+    "familyVote": "vote: {vote}",
+    "familySplit": "related models disagree → no vote",
+    "familyRelated": "{n} related models (fine-tuned from each other) count as one vote, only when they agree.",
+    "qualityTitle": "Image quality warning",
+    "qualitySmall": "The long side is only {side} px (reliable range ≥ {min} px).",
+    "qualityCompressed": "Heavy JPEG compression (quality ~{q}, reliable range > {max}).",
+    "qualityText": "Detectors miss more AI images at this quality (e.g. messenger copies), so {app} does not claim “no AI” for this file. Upload the original or the largest version if you have it."
+  },
+  "history": {
+    "label": "Records",
+    "title": "Scan history",
+    "search": "Search by filename, scan ID or SHA-256…",
+    "all": "All",
+    "empty": "No scans match.",
+    "cols": {
+      "image": "Image",
+      "assessment": "Assessment",
+      "aiScore": "Detection confidence",
+      "evidence": "Evidence",
+      "type": "Type",
+      "date": "Date",
+      "actions": "Actions"
+    },
+    "demo": "demo",
+    "downloadPdf": "Download PDF",
+    "deleteScan": "Delete scan",
+    "confirmDelete": "Delete this scan and its stored previews?"
+  },
+  "about": {
+    "label": "Methodology",
+    "title": "How {app} reaches a conclusion",
+    "detectorsTitle": "How AI-image detectors work",
+    "detectorsP1": "Detectors are neural classifiers trained on labelled sets of camera photographs and generated images. They learn statistical regularities — texture, frequency patterns, rendering artefacts — that differ between the two. {app} evaluates the detector on 7 views of each image (whole, mirrored, four halves, centre crop) and reports the median. These scores are **not calibrated probabilities**: 0.95 means the model strongly prefers the AI class, not that there is a 95% chance the image is generated.",
+    "detectorsP2": "To make decisions inspectable, {app} computes an **occlusion-sensitivity map**: the image is divided into an 8×8 grid, each cell is blurred in turn, and the change in the detector's score is measured. Regions whose removal lowers the AI score most are highlighted. This is a genuine model-derived explanation, but it is coarse.",
+    "forensicsTitle": "What image forensics can reveal",
+    "forensics": {
+      "f1": "**EXIF / XMP** — camera make and model, exposure settings, editing software and edit history.",
+      "f2": "**Generator markers** — IPTC trainedAlgorithmicMedia, Stable Diffusion/ComfyUI parameters in PNG chunks, vendor tags.",
+      "f3": "**C2PA Content Credentials** — cryptographically signed provenance manifests, when present.",
+      "f4": "**Error level analysis** — re-saving a JPEG and measuring the difference can expose regions with a different compression history.",
+      "f5": "**Face analysis** — faces are located, then each crop is scored by a face-manipulation classifier."
+    },
+    "rulesTitle": "Aggregation rules",
+    "rulesText": "Scores from different models are never averaged. Each signal becomes a labelled piece of evidence (strong / moderate / weak) and a fixed rule set decides the verdict. The rules that fired are printed on every report.",
+    "rules": {
+      "R1": "R1 Explicit AI-generator metadata or a C2PA AI declaration → Likely AI-generated",
+      "R2": "R2 One detector family says AI, none says not-AI (a lone raw-score detector needs ≥0.90) → Likely AI-generated",
+      "R3": "R3 Families say not-AI but moderate editing indicators → Potential manipulation",
+      "R4": "R4 Families say not-AI, camera EXIF, no editing indicators → Likely authentic photograph",
+      "R4b": "R4b Families say not-AI, no camera provenance, good image quality → No AI generation detected (editing not ruled out)",
+      "R5": "R5 Moderate editing indicators without AI agreement → Potential manipulation",
+      "R6": "R6 Otherwise → Inconclusive",
+      "R7": "R7 Detector families contradict each other → Inconclusive",
+      "R8": "R8 Camera EXIF with capture settings, no editing traces, a detector family says not-AI → Likely authentic",
+      "R1e": "R1e AI-composite metadata (IPTC/C2PA) or an AI enhancement app → Likely AI-edited photograph",
+      "R2e": "R2e Detectors say AI + camera capture EXIF → Likely AI-edited photograph",
+      "R9": "R9 Families say not-AI but the image is < 512 px or JPEG ≤ 75 (quality gate) → Inconclusive"
+    },
+    "notDefTitle": "Why results are not definitive",
+    "notDef": {
+      "n1": "Detectors generalise poorly to generators released after their training data.",
+      "n2": "Resizing, re-compression, screenshots and filters can flip detector outputs.",
+      "n3": "Metadata can be stripped (common on social media) or forged; its absence proves nothing.",
+      "n4": "ELA highlights textures and edges in authentic images too.",
+      "n5": "The face-manipulation classifier was trained on specific face-swap datasets and has a notable false-positive rate."
+    },
+    "modelsTitle": "Models and licenses",
+    "cols": {
+      "model": "Model",
+      "description": "Description",
+      "license": "License",
+      "role": "Role"
+    },
+    "models": {
+      "m1d": "SwinV2 classifier trained on real vs. artificial images; chosen after benchmarking 5 open detectors",
+      "m1r": "AI detector",
+      "m2d": "ViT-B/16 fine-tuned on real vs. deepfake faces",
+      "m2r": "Face crops only",
+      "m3d": "Lightweight CNN face detector",
+      "m3r": "Face localisation",
+      "m4d": "Community Forensics ViT-S/16-384 (frontier) — trained on images from thousands of generators; author's frozen calibrator",
+      "m4r": "AI detector (2nd family)",
+      "m5d": "Low-quality fine-tune of the frontier model (downscaled / compressed inputs); same family, not an independent vote",
+      "m5r": "AI detector (2nd family)"
+    },
+    "privacyTitle": "Privacy principles",
+    "privacy": {
+      "p1": "All inference runs locally; no image is sent to an external service.",
+      "p2": "Uploaded bytes are processed in memory. Only a metadata-stripped, downscaled preview and analysis overlays are kept, and deleting a scan removes them.",
+      "p3": "Files are validated by extension, magic bytes and full decode; decompression bombs are rejected.",
+      "p4": "GPS coordinates are never displayed or stored in reports.",
+      "p5": "Images are served only through the API by scan ID, never from a public directory."
+    },
+    "detectorsP3": "Two **independent detector families** run on every image: SwinV2 and Community Forensics (two related ViT models: a frontier model and its low-quality fine-tune, trained on thousands of generators). Related models count as **one vote**, and only when they agree. If the families contradict each other the result is Inconclusive. On small (< 512 px) or heavily compressed (JPEG ≤ 75) images {app} never claims “No AI detected”, because detectors miss more AI images there."
+  },
+  "status": {
+    "label": "Health check",
+    "title": "System status:",
+    "ready": "ready",
+    "degraded": "degraded",
+    "unreachable": "Backend unreachable. Start it with {cmd}.",
+    "running": "Running health check…",
+    "core": "Core",
+    "backend": "Backend API",
+    "database": "Database (SQLite)",
+    "modelsLoaded": "Models loaded at startup",
+    "detectorReady": "Primary detector ready",
+    "faceDetector": "Face detector: {name}",
+    "gpu": "GPU: {name}",
+    "cpuOnly": "none (CPU inference)",
+    "offline": "Offline mode (no hub access at runtime)",
+    "models": "Models",
+    "deps": "Dependencies",
+    "depsNote": "Python {py} · max upload {mb} MB. Optional: exiftool, c2pa (a byte-signature fallback is used if missing)."
+  },
+  "verdict": {
+    "ai_likely": "Likely AI-generated",
+    "authentic_likely": "Likely authentic photograph",
+    "not_ai": "No AI generation detected",
+    "manipulated_possible": "Potential manipulation / editing",
+    "inconclusive": "Inconclusive",
+    "ai_edited": "Likely AI-edited photograph"
+  },
+  "verdictShort": {
+    "ai_likely": "AI-likely",
+    "authentic_likely": "Likely authentic",
+    "not_ai": "No AI detected",
+    "manipulated_possible": "Possible edit",
+    "inconclusive": "Inconclusive",
+    "ai_edited": "AI-edited"
+  },
+  "strength": {
+    "strong": "strong",
+    "moderate": "moderate",
+    "weak": "weak"
+  },
+  "evidenceStrength": {
+    "strong": "strong",
+    "moderate": "moderate",
+    "limited": "limited",
+    "insufficient": "insufficient"
+  },
+  "band": {
+    "very_high": "very high",
+    "high": "high",
+    "elevated": "elevated",
+    "uncertain": "uncertain",
+    "low": "low",
+    "very_low": "very low"
+  },
+  "source": {
+    "detector": "detector",
+    "metadata": "metadata",
+    "provenance": "provenance",
+    "timeline": "timeline",
+    "ela": "ELA",
+    "face": "face"
+  },
+  "signalStatus": {
+    "points_ai": "Points to AI",
+    "points_camera": "Points to camera",
+    "points_edit": "Processing / edit",
+    "neutral": "Neutral",
+    "unreliable": "Unreliable",
+    "unavailable": "Unavailable"
+  },
+  "signalGroup": {
+    "ai": "AI generation",
+    "provenance": "Provenance",
+    "processing": "Processing",
+    "compression": "Compression",
+    "properties": "Image properties",
+    "faces": "Faces"
+  },
+  "checkStatus": {
+    "ok": "CONSISTENT",
+    "info": "INFO",
+    "notice": "NOTICE",
+    "warning": "INCONSISTENT"
+  },
+  "tz": {
+    "stated": "stated",
+    "local": "not stated (local time)",
+    "utc": "UTC"
+  },
+  "tlSource": {
+    "exif": "EXIF",
+    "exifGps": "EXIF GPS",
+    "xmp": "XMP",
+    "xmpHistory": "XMP edit history",
+    "png": "PNG text chunk",
+    "app": "Detective AI"
+  },
+  "views": {
+    "full": "full",
+    "flip": "mirror",
+    "top": "top",
+    "bottom": "bottom",
+    "left": "left",
+    "right": "right",
+    "center": "centre"
+  },
+  "stage": {
+    "metadata": "metadata",
+    "timeline": "timeline",
+    "ai_detection": "AI detection",
+    "saliency": "saliency",
+    "ela": "ELA",
+    "faces": "faces",
+    "aggregation": "aggregation"
+  },
+  "errors": {
+    "empty": "The uploaded file is empty.",
+    "tooLarge": "File exceeds the {mb} MB limit.",
+    "badExtension": "Unsupported file extension. Allowed: {allowed}.",
+    "notImage": "File content is not a valid image of an allowed type ({allowed}).",
+    "formatNotAllowed": "Image format not allowed.",
+    "tooManyPixels": "Image dimensions are too large (possible decompression bomb).",
+    "tooSmall": "Image is too small (minimum {min}px).",
+    "bomb": "Image rejected: decompression bomb protection triggered.",
+    "decode": "The image could not be decoded safely; it may be corrupted.",
+    "analysisFailed": "Analysis failed due to an internal error.",
+    "scanNotFound": "Scan not found.",
+    "sampleNotFound": "Sample not found.",
+    "notFound": "Not found.",
+    "notAvailable": "Not available.",
+    "internal": "Internal server error.",
+    "network": "Network error: the backend is unreachable.",
+    "requestFailed": "Request failed ({status}).",
+    "browserDecode": "The browser could not decode this image; it may be corrupted.",
+    "unsupportedType": "Unsupported file type. Use JPG, PNG, WEBP, HEIC or AVIF.",
+    "fileTooBig": "The file is {size} — the limit is {mb} MB."
+  },
+  "dyn": {
+    "lim": {
+      "noDetector": "No AI-image detector was available; the assessment relies on metadata only.",
+      "unstable": "{model} is unstable on this image: its score changes between views of the same picture ({views}).{cause} Treated as no reliable signal.",
+      "unstableCause": " Likely cause: the image is only {w}×{h} px, so its half-image views ({crop} px) are smaller than the detector's {input}-px input and have to be upscaled.",
+      "viewScore": "{view} {score}",
+      "uncertainScore": "{model} returned an uncertain score ({score}).",
+      "singleDetector": "Only one AI detector produced a result; the conclusion is based on limited evidence.",
+      "disagree": "Independent detector families contradict each other; this frequently happens on out-of-distribution images.",
+      "noExif": "No EXIF metadata. This is common for screenshots, social-media re-uploads and privacy-scrubbed files and is NOT evidence of AI generation.",
+      "lowJpeg": "Low JPEG quality (~{q}) degrades all detectors.",
+      "c2paInvalid": "A C2PA manifest claims AI generation but failed validation ({issues}); the image was altered after signing or the manifest is forged, so the claim is not used.",
+      "c2paUntrusted": "The C2PA AI declaration is cryptographically intact, but its signer was not checked against the official C2PA trust list (offline mode). A manifest signed with a self-made certificate would look the same; check the issuer named in the report.",
+      "xmpTruncated": "The file's XMP metadata is unusually large (> 512 KB); only the first 512 KB was analysed.",
+      "smallImage": "Small image ({w}×{h} px). Detectors are least reliable on low-resolution files; upload the largest or original version if one exists.",
+      "noEditDetection": "{app} detects AI generation; it does NOT reliably detect Photoshop edits, composites, pasted regions or text overlays.",
+      "notCalibrated": "Detector scores are model outputs, not calibrated probabilities.",
+      "evasion": "New generators and adversarial post-processing can evade detectors.",
+      "familySplit": "The {family} models disagree ({members}). Because they are related models, the family casts no vote.",
+      "familyUncertain": "The {family} models did not reach a decision ({members}).",
+      "qualityGate": "The detectors found no AI, but the image is small or heavily compressed (long side {side} px, JPEG ~{q}; reliable range: ≥ {min_side} px and quality > {max_q}). Detectors miss more AI images under these conditions, so “No AI detected” is not claimed.",
+      "vendorCalibrated": "Community Forensics scores use the model author's frozen calibrator, fitted on the author's data and not validated on {app}'s data. Treat them as model scores, not probabilities."
+    },
+    "ev": {
+      "detectorScore": "{model} AI-generation score {score} ({band})",
+      "markers": "Embedded generator markers: {markers}",
+      "c2paPresent": "C2PA Content Credentials present. Inspect the manifest: credentials can also declare AI generation.",
+      "c2paPresentGen": "C2PA Content Credentials present (generator: {gen}). Inspect the manifest: credentials can also declare AI generation.",
+      "cameraExif": "Camera EXIF present ({camera}) with exposure settings. EXIF can be forged or copied.",
+      "cameraMake": "Camera make/model present in EXIF.",
+      "editSoftware": "Editing software referenced: {tools}",
+      "xmpHistory": "XMP edit history present.",
+      "timeline": "{title}: {detail}",
+      "ela": "Error-level non-uniformity {value} (>1.2): regions recompress differently. This can indicate splicing but also occurs with textured content.",
+      "facesFlagged": "{n} face(s) scored ≥0.85 by the face-manipulation classifier (IDs {ids}).",
+      "facesClean": "{n} face(s) analysed; none exceeded the manipulation threshold.",
+      "member": "{name}: {decision} ({score})",
+      "family": "{family} family ({n} related models agree): {members}",
+      "detectorDecision": "{model}: {decision} (vendor-calibrated score {score})",
+      "aiEditTool": "AI enhancement / face-swap app recorded in metadata: {tools}"
+    },
+    "rule": {
+      "R1": "R1: Explicit AI-generator metadata markers present → Likely AI-generated.",
+      "R2": "R2: At least one independent detector family says AI and no family says not-AI (related models vote only when they agree; a lone raw-score detector needs ≥0.90) → Likely AI-generated.",
+      "R3": "R3: The detector families say not-AI, but editing indicators are present → Potential manipulation.",
+      "R4": "R4: The detector families say not-AI, camera EXIF is present and there are no editing indicators → Likely authentic photograph.",
+      "R4b": "R4b: The detector families say not-AI, but there is no camera provenance → No AI generation detected (editing/compositing is not ruled out).",
+      "R5": "R5: Moderate editing/manipulation indicators without AI-detector agreement → Potential manipulation.",
+      "R6": "R6: Evidence is mixed, uncertain or insufficient → Inconclusive.",
+      "R7": "R7: Independent detector families contradict each other → Inconclusive.",
+      "R8": "R8: Camera EXIF with capture settings, no editing traces, and at least one detector family says not AI → Likely authentic (EXIF can be forged; limited evidence).",
+      "R1e": "R1e: Metadata declares an AI composite (IPTC/C2PA compositeWithTrainedAlgorithmicMedia) or names an AI enhancement / face-swap app → Likely AI-edited photograph.",
+      "R2e": "R2e: The detectors say AI, but camera capture EXIF is present → Likely AI-edited photograph (or an AI image with copied camera metadata).",
+      "R9": "R9: The detectors say not-AI, but the image is too small or too compressed to rule out AI (quality gate) → Inconclusive."
+    },
+    "rec": {
+      "ai_likely": {
+        "1": "Seek the original source and publication context before sharing.",
+        "2": "Run a reverse-image search to locate earlier versions.",
+        "3": "Check for C2PA Content Credentials from the claimed creator."
+      },
+      "authentic_likely": {
+        "1": "Detectors did not flag this image, but this does not prove authenticity.",
+        "2": "Corroborate with the source, date and location where possible."
+      },
+      "not_ai": {
+        "1": "The image does not look AI-generated, but it may still be edited, composited or taken out of context.",
+        "2": "Look for the original via reverse-image search and compare it with this copy.",
+        "3": "Ask the sender for the original file with its camera metadata."
+      },
+      "manipulated_possible": {
+        "1": "Compare with other copies of the image to locate edited regions.",
+        "2": "Ask the source for the unedited original file."
+      },
+      "inconclusive": {
+        "1": "Treat the image as unverified.",
+        "2": "Obtain a higher-quality original and re-analyse.",
+        "3": "Use independent provenance checks (source, reverse search, C2PA)."
+      },
+      "ai_edited": {
+        "1": "The image looks like a real photo altered with AI; ask the sender for the unedited original.",
+        "2": "Compare it with other copies (reverse-image search) to find what was changed.",
+        "3": "Check the file's C2PA Content Credentials and edit history."
+      }
+    },
+    "method": "Rule-based aggregation over independent detector families. Each detector decides with its own published rule; related models vote together only when they agree; families that contradict each other give Inconclusive; on small or heavily compressed images “No AI detected” is never claimed. Scores from different models are never averaged or compared on one scale, and no score is presented as a calibrated probability.",
+    "marker": {
+      "iptcTrained": "IPTC DigitalSourceType = trainedAlgorithmicMedia (declared AI-generated)",
+      "iptcComposite": "IPTC DigitalSourceType = compositeWithTrainedAlgorithmicMedia",
+      "midjourney": "Midjourney marker in metadata",
+      "dalle": "DALL·E marker in metadata",
+      "sd": "Stable Diffusion marker in metadata",
+      "comfyui": "ComfyUI workflow marker in metadata",
+      "novelai": "NovelAI marker in metadata",
+      "firefly": "Adobe Firefly marker in metadata",
+      "imagen": "Google Imagen marker in metadata",
+      "openai": "OpenAI marker in metadata",
+      "sampler": "Diffusion sampler parameters embedded",
+      "prompt": "Diffusion prompt parameters embedded",
+      "c2pa": "C2PA Content Credentials declare AI generation ({types}; signed by {generator}, issuer {issuer}; {trust})",
+      "c2paTrusted": "signer verified against the trust list",
+      "c2paUntrusted": "signature intact; signer identity not verified against the C2PA trust list (offline)"
+    },
+    "sig": {
+      "ai": {
+        "name": "AI-image detector ({model})",
+        "unavailableFinding": "The detector did not run.",
+        "unavailableMeaning": "No AI-generation evidence from this model.",
+        "unreliableValue": "median {median}, {pct}% of views agree",
+        "unreliableFinding": "The detector's score flips between views of the same image.{small}",
+        "unreliableSmall": " The image is only {w}×{h} px — too small for reliable crops.",
+        "unreliableMeaning": "The model is outside its comfort zone on this picture (common for small images, heavy compression or unusual content). Its output should be ignored.",
+        "aiFinding": "The model output strongly matches AI-generated training images, consistently across 7 views.",
+        "aiMeaning": "Statistical evidence of generation. Not proof: new generators and some real photos can trigger it.",
+        "camFinding": "The model output does not resemble AI-generated images, consistently across 7 views.",
+        "camMeaning": "No AI-generation pattern found. This does NOT rule out Photoshop edits or composites.",
+        "neutralFinding": "The model output is in the uncertain middle range.",
+        "neutralMeaning": "The detector cannot decide on this image.",
+        "calValue": "{score} (vendor-calibrated) · logit {logit}",
+        "cfAiFinding": "The model's raw logit is above the author's published decision boundary (centre crop 384 px).",
+        "cfCamFinding": "The model's raw logit is below the author's published decision boundary (centre crop 384 px)."
+      },
+      "markers": {
+        "name": "Generator markers in metadata",
+        "foundFinding": "The file declares or embeds AI-generation parameters.",
+        "foundMeaning": "Strong evidence: generators and AI tools write these tags. They can be removed, so their absence means little.",
+        "noneValue": "none",
+        "noneFinding": "No IPTC, C2PA or prompt markers of AI tools.",
+        "noneMeaning": "Absence is common for both real and generated images."
+      },
+      "c2pa": {
+        "name": "C2PA Content Credentials",
+        "aiFinding": "A cryptographically signed manifest states that the image was produced with generative AI.",
+        "aiMeaning": "The strongest available evidence of AI origin: the generator itself signed it. It is lost when the file is screenshotted, re-saved or sent through most messengers.",
+        "presentValue": "present",
+        "presentFinding": "A signed provenance manifest is embedded.",
+        "presentMeaning": "Credentials record which tool produced or edited the file; read the manifest (it may itself declare AI).",
+        "absentValue": "not present",
+        "absentFinding": "No Content Credentials manifest.",
+        "absentMeaning": "Most images today carry none; this is expected and not suspicious."
+      },
+      "camera": {
+        "name": "Camera EXIF",
+        "fullFinding": "Camera make/model and exposure settings are present.",
+        "fullMeaning": "Typical of a camera original. EXIF can be copied or forged, so this is supporting evidence only.",
+        "partFinding": "Camera make/model present, no exposure data.",
+        "partMeaning": "A weak provenance hint.",
+        "absentValue": "absent",
+        "absentFinding": "No camera information in the file.",
+        "absentMeaning": "Messengers, social networks, screenshots and privacy tools strip EXIF. Its absence is NOT evidence of AI generation or manipulation."
+      },
+      "edit": {
+        "name": "Editing software traces",
+        "foundFinding": "Metadata references {tools}.",
+        "historyValue": "XMP history",
+        "historyTools": "an edit history",
+        "foundMeaning": "The file passed through editing software. That shows processing (it could be a simple crop or export), not what was changed.",
+        "noneValue": "none",
+        "noneFinding": "No known editing application referenced.{sw}",
+        "noneSw": " Software tag: {sw}.",
+        "noneMeaning": "Absence does not mean unedited: editors can strip metadata."
+      },
+      "timeline": {
+        "name": "Timestamp consistency",
+        "warnValue": "{n} inconsistency(ies)",
+        "warnMeaning": "Contradictory timestamps indicate edited metadata or a misconfigured device clock.",
+        "okValue": "{n} timestamp(s), consistent",
+        "okFinding": "No contradictions between embedded dates.",
+        "okMeaning": "Consistent metadata is expected for genuine files but can also be forged.",
+        "noneValue": "no timestamps",
+        "noneFinding": "Nothing to cross-check.",
+        "noneMeaning": "Missing dates are not evidence of manipulation."
+      },
+      "jpeg": {
+        "name": "JPEG quality estimate",
+        "finding": "Quantisation tables correspond to quality ≈{q}.",
+        "meaning": "Camera originals are usually 90–98; values ≤85 indicate re-compression by an app, website or messenger, which also weakens every other detector.",
+        "naFinding": "Not a JPEG file.",
+        "naMeaning": "PNG, WEBP, HEIC and AVIF have no JPEG quantisation tables to inspect."
+      },
+      "reshare": {
+        "name": "Re-sharing fingerprint",
+        "value": "{w}×{h}, q≈{q}, no EXIF",
+        "finding": "Size, quality and stripped metadata match a messenger or social-network re-upload.",
+        "meaning": "The file is probably not the original. Ask for the original to get provenance data."
+      },
+      "dims": {
+        "name": "Dimensions",
+        "genFinding": "Both sides are multiples of 64 in sizes typical for diffusion-model output.",
+        "genMeaning": "A weak hint only: many crops and exports share these sizes.",
+        "finding": "Dimensions recorded.",
+        "meaning": "Dimensions alone do not indicate origin."
+      },
+      "ela": {
+        "name": "Error level analysis",
+        "value": "non-uniformity {nu}",
+        "unevenFinding": "Regions recompress unevenly.",
+        "evenFinding": "Regions recompress fairly evenly.",
+        "meaning": "Uneven error levels can reveal pasted regions, but textures and edges also cause them. See the ELA image in Forensic evidence."
+      },
+      "faces": {
+        "name": "Face-manipulation classifier",
+        "valueMax": "{n} face(s); max {max}",
+        "value": "{n} face(s)",
+        "flaggedFinding": "{n} face(s) above 0.85.",
+        "okFinding": "No face above the 0.85 threshold.",
+        "meaning": "Trained on face-swap datasets; real faces can score 0.7–0.8, so only very high scores are flagged.",
+        "noneValue": "no faces",
+        "noneFinding": "No faces detected.",
+        "noneMeaning": "Face-swap analysis is not applicable."
+      },
+      "quality": {
+        "name": "Image quality for AI detection",
+        "value": "long side {side} px · JPEG {q}",
+        "lowFinding": "Below the reliable range (long side ≥ {min_side} px and JPEG quality > {max_q}).",
+        "okFinding": "Within the reliable range (long side ≥ {min_side} px, JPEG quality > {max_q}).",
+        "lowMeaning": "Detectors miss more AI images at this size / compression (e.g. messenger copies). A “not AI” result is not trusted here.",
+        "okMeaning": "Image quality does not limit the detectors."
+      }
+    },
+    "tl": {
+      "ev": {
+        "dateTimeOriginal": "When the camera says the shutter was pressed.",
+        "dateTimeDigitized": "When the image was digitised (same as capture for digital cameras).",
+        "modify": "When the file was last written by software{sw}.",
+        "modifySw": " ({sw})",
+        "gps": "Satellite time (UTC) recorded with the location fix. The location itself is withheld.",
+        "xmpCreate": "Creation date written by the authoring software.",
+        "xmpModify": "Last modification date written by software.",
+        "xmpMetadata": "Last time the metadata block was changed.",
+        "psCreated": "Creation date recorded in the Adobe XMP namespace.",
+        "xmpExifOriginal": "Capture date copied into XMP.",
+        "history": "Edit-history entry: ‘{action}’{agent}.",
+        "historyAgent": " by {agent}",
+        "png": "Timestamp stored in a PNG text chunk by the writing software.",
+        "scan": "File received; SHA-256 computed at this moment.",
+        "scanField": "Received for analysis"
+      },
+      "chk": {
+        "no_timestamps": {
+          "title": "No embedded timestamps",
+          "detail": "The file carries no EXIF, XMP or PNG dates.",
+          "meaning": "Very common: messengers and social networks strip metadata, and screenshots and AI tools often write none. This is NOT evidence of manipulation or of AI generation."
+        },
+        "modify_before_capture": {
+          "title": "Modification date earlier than capture date",
+          "detail": "ModifyDate {modify} is {hours} h before DateTimeOriginal {orig}.",
+          "meaning": "Physically impossible for an untouched file. Usually caused by a camera clock reset or by metadata being edited or copied from another file."
+        },
+        "modified_after_capture": {
+          "title": "File re-written after capture",
+          "detail": "Last written {days} days after capture{sw}.",
+          "detailSw": " by ‘{sw}’",
+          "meaning": "The file was saved again after it was taken (editing, rotation, export or a metadata change). This is not proof of content manipulation."
+        },
+        "capture_modify_consistent": {
+          "title": "Capture and modification dates match",
+          "detail": "ModifyDate is within 2 minutes of DateTimeOriginal.",
+          "meaning": "Consistent with a file that was not re-saved by editing software. Metadata can still be forged."
+        },
+        "orig_digitized_mismatch": {
+          "title": "Capture and digitisation dates differ",
+          "detail": "{a} vs {b}.",
+          "meaning": "Normal for scanned film; unusual for a phone or digital-camera photo."
+        },
+        "future_dates": {
+          "title": "Timestamp(s) in the future",
+          "detail": "{list}",
+          "meaning": "A date later than the moment of analysis means a wrong device clock or edited metadata."
+        },
+        "implausible_dates": {
+          "title": "Implausibly old timestamp(s)",
+          "detail": "{list}",
+          "meaning": "Typically a camera whose clock was never set (e.g. 1970/1980 defaults)."
+        },
+        "exif_xmp_mismatch": {
+          "title": "EXIF and XMP creation dates disagree",
+          "detail": "EXIF {exif} vs XMP {xmp} ({hours} h apart, not a whole-hour time-zone shift).",
+          "meaning": "The two metadata blocks normally agree. A mismatch suggests the metadata was edited or merged from different files."
+        },
+        "gps_time_mismatch": {
+          "title": "GPS time far from capture time",
+          "detail": "{hours} h apart (time zones explain at most 14 h).",
+          "meaning": "GPS time comes from satellites and is hard to get wrong; a large gap indicates edited metadata or a stale GPS fix."
+        },
+        "gps_time_consistent": {
+          "title": "GPS time consistent with capture time",
+          "detail": "{hours} h apart (within the time-zone range).",
+          "meaning": "Independent clocks agree."
+        },
+        "software_no_time_change": {
+          "title": "Software tag present but no modification time recorded",
+          "detail": "Software: {sw}.",
+          "meaning": "Many phones write their firmware or app name here, so this is usually benign."
+        },
+        "edit_history": {
+          "title": "Edit history with {n} event(s)",
+          "detail": "Actions: {actions}{agents}.",
+          "detailAgents": "; software: {agents}",
+          "meaning": "The file records that it was opened, saved or converted by editing software. This shows the file was processed, not what was changed."
+        },
+        "no_inconsistency": {
+          "title": "No timestamp inconsistencies found",
+          "detail": "{n} embedded timestamp(s) checked.",
+          "meaning": "The absence of contradictions does not prove authenticity: a forger can write consistent metadata."
+        }
+      }
+    },
+    "face": {
+      "tooSmall": "face too small for the classifier",
+      "unavailable": "face classifier unavailable"
+    }
+  },
+  "pdf": {
+    "header": "{app}  |  Digital Image Forensic Report",
+    "headerRight": "Case {id}  |  CONFIDENTIAL",
+    "hashFooter": "Evidence SHA-256: {sha}",
+    "page": "Page {n} of {total}",
+    "title": "Digital Image Forensic Report",
+    "subtitle": "Case {id}  ·  Report generated {date}  ·  {app} automated analysis",
+    "assessment": "AUTHENTICITY ASSESSMENT",
+    "summary": "Evidence strength: {strength}  ·  Detection confidence: {indicator}  ·  Signals: {ai} to AI, {cam} to camera, {edit} processing/edit, {unrel} unreliable",
+    "noReliable": "no reliable score",
+    "noReliableSmall": "no reliable score (image too small)",
+    "notDetermined": "not determined",
+    "evidenceItem": "Evidence item",
+    "caseId": "Case / scan ID",
+    "filename": "Original filename",
+    "received": "Received for analysis",
+    "format": "Format",
+    "dimensions": "Dimensions",
+    "fileSize": "File size",
+    "bytes": "{n} bytes",
+    "integrity": "Integrity statement: the SHA-256 digest above was computed over the exact bytes received, before any processing. The file was analysed in memory and never executed or modified; any copy whose digest matches is bit-for-bit identical to the analysed evidence.",
+    "s1": "1. Authenticity assessment",
+    "how": "How the conclusion was reached",
+    "evFor": "Evidence for AI generation",
+    "evAgainst": "Evidence against AI generation",
+    "evEdit": "Processing and editing indicators",
+    "noneFound": "None found.",
+    "next": "Recommended next steps",
+    "s2": "2. Detected signals",
+    "s2note": "Each signal is measured independently and reported with its raw value. No signal is converted into a probability, and signals are not averaged.",
+    "colSignal": "Signal",
+    "colValue": "Value",
+    "colStatus": "Status",
+    "colFinding": "Finding and meaning",
+    "s3": "3. Forensic timeline",
+    "colTime": "Timestamp",
+    "colSource": "Source",
+    "colField": "Field",
+    "colMeaning": "Meaning",
+    "tzNote": "(time zone {tz})",
+    "checks": "Consistency checks",
+    "colResult": "Result",
+    "colCheck": "Check",
+    "colDetail": "Detail and interpretation",
+    "history": "Recorded edit history (XMP)",
+    "colWhen": "When",
+    "colAction": "Action",
+    "colSoftware": "Software",
+    "noTimeline": "The timeline is not available for this scan (it was analysed before the timeline module existed).",
+    "s4": "4. Forensic evidence — exhibits",
+    "exA": "Exhibit A — original (re-encoded preview)",
+    "exB": "Exhibit B — detector occlusion map",
+    "exC": "Exhibit C — detected faces",
+    "exD": "Exhibit D — error level analysis",
+    "exNote": "Exhibit B is computed by occluding image regions and re-running the detector; Exhibit D shows real JPEG re-compression residuals. Neither is a decorative heatmap.",
+    "faces": "Face analysis",
+    "colBox": "Box (x, y, w, h)",
+    "colDet": "Detection conf.",
+    "colManip": "Manipulation score",
+    "colFlagged": "Flagged",
+    "yes": "yes",
+    "no": "no",
+    "s5": "5. Technical metadata",
+    "camera": "Camera",
+    "notPresent": "not present",
+    "swTag": "Software tag",
+    "creatorTool": "XMP creator tool",
+    "editSw": "Editing software",
+    "noneDetected": "none detected",
+    "aiMarkers": "AI generator markers",
+    "c2pa": "C2PA",
+    "c2paPresent": "present",
+    "c2paNotFound": "not found",
+    "jpegQ": "JPEG quality",
+    "ela": "ELA",
+    "elaValue": "mean {mean}, p99 {p99}, non-uniformity {nu}",
+    "exifFields": "EXIF fields (GPS coordinates withheld)",
+    "colTag": "Tag",
+    "s6": "6. Methodology and models",
+    "colComponent": "Component",
+    "colModel": "Model / method",
+    "colLicense": "License",
+    "compAi": "AI-image detector",
+    "compFace": "Face detection",
+    "compFaceManip": "Face manipulation",
+    "multiview": "SwinV2 is evaluated on 7 views of the image (whole, mirrored, halves, centre crop); the median is reported and the result is marked unreliable when fewer than 80% of the views agree. The Community Forensics models use the author's preprocessing (short edge 440 px, centre crop 384 px) and decision boundary. Related models vote together only when they agree. Timestamp checks compare EXIF, XMP, GPS and edit-history dates.",
+    "s7": "7. Analysis limitations",
+    "declaration": "Declaration: this report was produced automatically by {app}. It presents indicators, not proof, and is not a substitute for examination by a qualified forensic analyst. No automated method can guarantee that an image is authentic or AI-generated.",
+    "detectors": "AI detector findings",
+    "colDetector": "Detector (family)",
+    "colDecision": "Decision",
+    "colScore": "Score and type",
+    "colRule": "Decision rule",
+    "confNote": "Detection confidence is the agreement between independent detector families, not a probability. No calibrated probability is reported."
+  },
+  "decision": {
+    "ai": "AI",
+    "real": "not AI",
+    "uncertain": "uncertain",
+    "unreliable": "unreliable"
+  },
+  "confidence": {
+    "high": "High",
+    "moderate": "Moderate",
+    "limited": "Limited",
+    "conflict": "Conflicting",
+    "none": "None"
+  },
+  "scoreKind": {
+    "raw": "raw model output (uncalibrated)",
+    "vendor_calibrated": "vendor-calibrated (not validated on our data)"
+  }
+}

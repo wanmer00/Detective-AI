@@ -1,0 +1,972 @@
+{
+  "lang": {
+    "label": "Dil",
+    "en": "EN",
+    "ru": "RU",
+    "az": "AZ",
+    "name_en": "English",
+    "name_ru": "Русский",
+    "name_az": "Azərbaycanca"
+  },
+  "common": {
+    "loading": "Yüklənir…",
+    "cancel": "Ləğv et",
+    "delete": "Sil",
+    "newScan": "Yeni yoxlama",
+    "backToHistory": "Tarixçəyə qayıt",
+    "demoSample": "demo nümunə",
+    "unavailable": "əlçatan deyil",
+    "na": "yoxdur",
+    "notFoundPage": "Səhifə tapılmadı.",
+    "analyzeImage": "Təsviri yoxla",
+    "howItWorks": "Necə işləyir",
+    "none": "yoxdur"
+  },
+  "nav": {
+    "dashboard": "İdarə paneli",
+    "scanner": "Skaner",
+    "history": "Tarixçə",
+    "methodology": "Metodologiya",
+    "status": "Sistemin vəziyyəti",
+    "menu": "Menyu"
+  },
+  "health": {
+    "offline": "Server əlçatan deyil",
+    "checking": "Yoxlanılır…",
+    "ready": "Detektorlar hazırdır",
+    "degraded": "Məhdud rejim"
+  },
+  "footer": {
+    "text": "{app} · OYU CyberAI Hackathon 2026 · Nəticələr sübut deyil, göstəricidir.",
+    "short": "{app} · OYU CyberAI Hackathon 2026"
+  },
+  "landing": {
+    "badge": "Lokal analiz · Təsvirlər bu kompüterdən kənara çıxmır",
+    "titleA": "Təsvirlərin həqiqiliyi",
+    "titleB": "sübutlarla təsdiqlənir.",
+    "lead": "{app} iki müstəqil əvvəlcədən öyrədilmiş Sİ detektor ailəsini, metaməlumat və mənşə ekspertizasını, xəta səviyyəsi analizini və üz analizini bir şəffaf hesabatda birləşdirir — hər siqnalın nə tapdığını, harada razılaşmadıqlarını və nəyin qeyri-müəyyən qaldığını göstərir.",
+    "howLabel": "Necə işləyir",
+    "howTitle": "Dörd mərhələ — yoxlanıla bilən vahid proses",
+    "steps": {
+      "upload": {
+        "t": "Yükləmə",
+        "d": "JPG, PNG, WEBP, HEIC və ya AVIF faylını bura atın. Fayl yoxlanılır, heşlənir (SHA-256) və yaddaşda təhlükəsiz şəkildə dekodlanır."
+      },
+      "analyse": {
+        "t": "Analiz",
+        "d": "Lokal olaraq benchmark ilə yoxlanılmış iki detektor ailəsi (SwinV2 və Community Forensics), metaməlumat və mənşə yoxlamaları, xəta səviyyəsi analizi və üz analizi işləyir."
+      },
+      "aggregate": {
+        "t": "Birləşdirmə",
+        "d": "Şəffaf qaydalar sistemi hər siqnalı qiymətləndirir və nəticəyə məhz hansı qaydaların gətirdiyini göstərir."
+      },
+      "report": {
+        "t": "Hesabat",
+        "d": "Lehinə və əleyhinə sübutlar, məhdudiyyətlər və yüklənə bilən PDF ilə ekspertiza hesabatı alın."
+      }
+    },
+    "capsLabel": "Analiz imkanları",
+    "capsTitle": "Tək bir “qara qutu” deyil, müstəqil siqnallar",
+    "caps": {
+      "ai": {
+        "t": "Sİ ilə yaradılmanın aşkarlanması",
+        "d": "SwinV2 və Community Forensics ailəsi, etiketlənmiş təsvirlərdə benchmark ilə seçilib. Hər biri ayrıca səs verir; fikir ayrılığı ortalanmır, göstərilir."
+      },
+      "meta": {
+        "t": "Metaməlumat ekspertizası",
+        "d": "EXIF, XMP, PNG mətn blokları, IPTC DigitalSourceType və daxil edilmiş generator parametrləri."
+      },
+      "c2pa": {
+        "t": "C2PA mənşə yoxlaması",
+        "d": "Content Credentials manifestlərini oxuyur: kim imzalayıb, Sİ ilə yaradılma bəyan olunubmu və imza pozulmayıbmı."
+      },
+      "ela": {
+        "t": "Xəta səviyyəsi analizi (ELA)",
+        "d": "Təkrar JPEG sıxılmasının qalıqları və keyfiyyət qiymətləndirməsi fərqli sıxılan sahələri üzə çıxarır."
+      },
+      "faces": {
+        "t": "Üz analizi",
+        "d": "YuNet ilə üzlərin aşkarlanması və hər tapılan üz fraqmentinə tətbiq olunan ViT üz dəyişdirmə təsnifatçısı."
+      },
+      "saliency": {
+        "t": "Modelin əhəmiyyət xəritəsi",
+        "d": "Örtmə həssaslığı xəritələri detektorun özü əsasında qurulur — heç vaxt dekorativ “istilik xəritələri” deyil."
+      }
+    },
+    "techLabel": "Texnologiyalar",
+    "techTitle": "Sizin avadanlıqda işləyən açıq modellər",
+    "techText": "Bütün model çəkiləri açıq lisenziyalıdır və bir dəfə yüklənir. Quraşdırmadan sonra {app} tam oflayn işləyir: yüklənən fayllar yaddaşda emal olunur və heç vaxt üçüncü tərəf xidmətlərinə göndərilmir.",
+    "tech": {
+      "i1": "PyTorch · Transformers",
+      "i2": "Sİ detektorları SwinV2 (Apache-2.0) + Community Forensics ViT (MIT)",
+      "i3": "Sübutların qiymətləndirilməsi üçün qaydalar sistemi",
+      "i4": "ViT üz dəyişdirmə təsnifatçısı (Apache-2.0)",
+      "i5": "OpenCV YuNet üz detektoru",
+      "i6": "FastAPI · SQLite · ReportLab",
+      "i7": "React · TypeScript · Tailwind",
+      "i8": "C2PA · EXIF · XMP təhlili"
+    },
+    "disclaimerTitle": "Sİ-dən məsuliyyətli istifadə",
+    "disclaimer": "Heç bir detektor təsvirin həqiqi olduğuna və ya Sİ ilə yaradıldığına zəmanət verə bilməz. Detektor qiymətləri modelin nəticələridir, kalibrlənmiş ehtimallar deyil. Metaməlumatın olmaması yaradılmanı sübut etmir, metaməlumatı isə saxtalaşdırmaq mümkündür. {app}-dan insan tərəfindən aparılan yoxlamanın mənbələrindən biri kimi istifadə edin — heç vaxt ittiham və ya qərar üçün yeganə əsas kimi yox."
+  },
+  "dashboard": {
+    "label": "İcmal",
+    "title": "İdarə paneli",
+    "subtitle": "Bütün göstəricilər yoxlamalar bazası üzrə real vaxtda hesablanır.",
+    "newAnalysis": "Yeni yoxlama",
+    "loadError": "Statistikanı yükləmək mümkün olmadı: {error}",
+    "tiles": {
+      "total": "Ümumi yoxlama",
+      "ai": "Ehtimal ki, Sİ",
+      "authentic": "Ehtimal ki, həqiqi",
+      "notAi": "Sİ aşkarlanmadı",
+      "manip": "Mümkün redaktə",
+      "inconclusive": "Qəti nəticə yoxdur",
+      "aiEdited": "Sİ ilə dəyişdirilib"
+    },
+    "recent": "Son yoxlamalar",
+    "viewAll": "Bütün tarixçə",
+    "empty": "Hələ yoxlama yoxdur.",
+    "emptyCta": "İlk təsviri yoxlayın",
+    "aiScore": "Sİ {score}",
+    "confidence": "inam: {level}"
+  },
+  "scanner": {
+    "label": "Təsvir skaneri",
+    "title": "Təsvirin yoxlanılması",
+    "subtitle": "{mb} MB-a qədər JPG, PNG, WEBP, HEIC (iPhone) və ya AVIF. Emal lokal aparılır; ilkin fayl saxlanılmır.",
+    "drop": "Təsviri bura atın",
+    "or": "və ya",
+    "browse": "fayl seçin",
+    "previewAlt": "Önbaxış",
+    "noPreview": "Brauzer {ext} fayllarını göstərə bilmir.",
+    "noPreviewNote": "Server faylı dekodlayır və analiz üçün kameranın bütün metaməlumatlarını saxlayır.",
+    "replace": "Əvəz et",
+    "remove": "Sil",
+    "analyze": "Yoxla",
+    "progress": "Analizin gedişi",
+    "idle": "Təsvir seçin və “Yoxla” düyməsini basın. Aşağıdakı bütün mərhələlər serverdə icra olunur.",
+    "upload": "Yükləmə",
+    "uploading": "Yüklənir…",
+    "inProgress": "Serverdə analiz gedir ({s} san)",
+    "stages": {
+      "validate": "Faylın yoxlanılması və heşlənməsi",
+      "metadata": "Metaməlumatların və C2PA-nın çıxarılması",
+      "detect": "Sİ detektorlarının işə salınması",
+      "saliency": "Əhəmiyyət xəritəsinin qurulması",
+      "ela": "Xəta səviyyəsi analizi",
+      "faces": "Üzlərin aşkarlanması və analizi",
+      "aggregate": "Sübutların birləşdirilməsi"
+    },
+    "timingsNote": "Hər mərhələnin faktiki müddəti hesabatda göstərilir.",
+    "samples": "Demo nümunələr",
+    "noSamples": "Demo nümunələr quraşdırılmayıb.",
+    "samplesNote": "Nümunələr adi yükləmələrlə tam eyni prosesdən keçir. Mənşə sample_images/README.md faylında təsvir olunub."
+  },
+  "samples": {
+    "edited-camera": {
+      "title": "Hopetaun şəlaləsi (kamera fotosu, Photoshop-da redaktə olunub)",
+      "category": "Redaktə olunmuş kamera fotosu — xronologiya nümunəsi"
+    },
+    "real-people": {
+      "title": "Brodsterz festivalı (küçə fotosu)",
+      "category": "Həqiqi fotoşəkil"
+    },
+    "real-portrait": {
+      "title": "Nil Armstronqun portreti (NASA)",
+      "category": "Həqiqi fotoşəkil (üz)"
+    },
+    "ai-zvd": {
+      "title": "AI images ZvD 01 (Stable Diffusion)",
+      "category": "Sİ ilə yaradılıb"
+    },
+    "ai-mountains": {
+      "title": "Dağlarda insan (Sİ)",
+      "category": "Sİ ilə yaradılıb (fotorealistik)"
+    }
+  },
+  "results": {
+    "loading": "Hesabat yüklənir…",
+    "history": "Tarixçə",
+    "viewReport": "Hesabatı aç",
+    "download": "Ekspertiza hesabatını yüklə (PDF)",
+    "caseLabel": "İş",
+    "evidenceItem": "Tədqiqat obyekti:",
+    "receivedLabel": "Qəbul olunub:",
+    "sections": {
+      "assessment": "Həqiqilik qiymətləndirməsi",
+      "signals": "Aşkarlanan siqnallar",
+      "evidence": "Ekspertiza sübutları",
+      "metadata": "Texniki metaməlumatlar",
+      "limitations": "Analizin məhdudiyyətləri"
+    },
+    "evidenceStrength": "Sübutların gücü:",
+    "signalsExamined": "Yoxlanılan siqnal sayı: {n}",
+    "detectorsProduced": "Nəticə verən Sİ detektorları: {ok}/{total}",
+    "howReached": "Nəticə necə əldə olunub",
+    "indicator": "Sİ ilə yaradılma göstəricisi",
+    "rawNote": "Modelin ilkin nəticəsi (7 variant üzrə median), kalibrlənmiş ehtimal deyil.",
+    "noReliable": "Etibarlı qiymət yoxdur",
+    "notDetermined": "Müəyyən edilməyib",
+    "unstableText": "Detektor bu təsvirin müxtəlif variantlarında özünə zidd nəticələr verir, ona görə qiymət göstərilmir.",
+    "noConsistent": "Detektor uyğunlaşdırılmış nəticə vermədi.",
+    "lowResCause": "Ehtimal olunan səbəb: təsvir cəmi {w}×{h} pikseldir. Onun hissələri detektorun giriş ölçüsündən (256 piksel) kiçikdir, ona görə böyüdülməli olur və bu, modeli çaşdırır. Əlinizdə varsa, orijinalı və ya ən böyük versiyanı yükləyin.",
+    "countAi": "Sİ lehinə",
+    "countCam": "kamera lehinə",
+    "countEdit": "emal / redaktə",
+    "evFor": "Sİ ilə yaradılma lehinə sübutlar",
+    "evAgainst": "Sİ ilə yaradılma əleyhinə sübutlar",
+    "evEdit": "Emal və redaktə əlamətləri",
+    "noneFound": "Aşkarlanmayıb.",
+    "nextSteps": "Tövsiyə olunan addımlar",
+    "signalsHint": "Hər siqnal müstəqil ölçülür. İzahını görmək üçün sətrə klikləyin.",
+    "noSignals": "Bu yoxlama siqnal analizi əlavə olunmazdan əvvəl aparılıb. Təsviri yenidən yoxlayın.",
+    "whatMeans": "Bu nə deməkdir:",
+    "perView": "{model} — variantlar üzrə qiymətlər",
+    "stable": "sabit",
+    "unstable": "qeyri-sabit",
+    "viewsAgree": "variantların {pct}%-i razılaşır · median istifadə olunur",
+    "timeline": "Hadisələrin xronologiyası",
+    "noTimeline": "Bu köhnə yoxlama üçün xronologiya əlçatan deyil.",
+    "timezone": "Saat qurşağı: {tz}.",
+    "checks": "Uyğunluq yoxlamaları",
+    "visual": "Vizual sübutlar",
+    "vis": {
+      "original": "Orijinal",
+      "saliency": "Detektor üçün əhəmiyyət",
+      "faces": "Üzlərin aşkarlanması",
+      "ela": "Xəta səviyyəsi analizi"
+    },
+    "visNote": {
+      "original": "Yenidən kodlaşdırılmış önbaxış; metaməlumatlar silinib.",
+      "saliency": "Sahə nə qədər “isti”dirsə, onun bulanıqlaşdırılması Sİ qiymətini bir o qədər çox azaldır. Xəritə modeldən alınıb, dekorasiya deyil.",
+      "faces": "Çərçivələr YuNet-dəndir. Qırmızı çərçivə — üz dəyişdirmə təsnifatçısının qiyməti ≥ 0,85.",
+      "ela": "Nə qədər parlaqdırsa, təkrar JPEG sıxılmasının xətası bir o qədər böyükdür. Teksturlar və kənarlar təbii olaraq parlaq olur — uyğunsuz sahələri axtarın."
+    },
+    "saliencyNotLocal": "Əhəmiyyət: heç bir sahə qiyməti 0,02-dən çox dəyişmədi — qərar konkret sahəyə bağlı deyil.",
+    "faceAnalysis": "Üz analizi",
+    "faceDetector": "Detektor: {name}",
+    "faceClassifier": "Təsnifatçı: {name}",
+    "noFaces": "Üz aşkarlanmadı.",
+    "colBox": "Çərçivə",
+    "colDet": "Aşkarlama",
+    "colManip": "Dəyişdirmə qiyməti",
+    "flagged": "qeyd olunub",
+    "evidenceItemCard": "Tədqiqat obyekti",
+    "caseId": "İş / yoxlama nömrəsi",
+    "filename": "Fayl adı",
+    "received": "Qəbul olunub",
+    "format": "Format",
+    "dimensions": "Ölçülər",
+    "size": "Həcm",
+    "bytes": "{n} bayt",
+    "jpegQ": "JPEG keyfiyyəti",
+    "jpegTables": "~{q} (cədvəl sayı: {n})",
+    "ela": "ELA",
+    "elaValue": "orta {mean} · p99 {p99} · qeyri-bircinslik {nu}",
+    "noise": "Qalıq küy σ",
+    "sharpness": "Kəskinlik",
+    "processing": "Emal",
+    "embedded": "Daxili metaməlumatlar",
+    "exif": "EXIF",
+    "exifFields": "sahə sayı: {n}",
+    "camera": "Kamera",
+    "software": "Proqram",
+    "creatorTool": "Yaradan proqram (XMP)",
+    "editSw": "Redaktor proqramlar",
+    "noneDetected": "aşkarlanmayıb",
+    "xmp": "XMP",
+    "xmpPresent": "var",
+    "xmpWithHistory": "var (redaktə tarixçəsi ilə)",
+    "tzOffsets": "Saat qurşağı fərqləri",
+    "aiMarkers": "Sİ markerləri",
+    "c2pa": "C2PA",
+    "c2paPresent": "var",
+    "c2paNotFound": "tapılmadı",
+    "exiftool": "ExifTool",
+    "exiftoolTags": "teq sayı: {n}",
+    "exiftoolMissing": "quraşdırılmayıb (Pillow istifadə olunur)",
+    "rawExif": "İlkin EXIF sahələri",
+    "pngChunks": "PNG mətn blokları",
+    "models": "İstifadə olunan modellər",
+    "faceLoc": "üzlərin tapılması",
+    "faceManipModel": "üz dəyişdirmə təsnifatçısı · Apache-2.0",
+    "faceDetUnavailable": "üz detektoru əlçatan deyil",
+    "none": "yoxdur",
+    "detectionConfidence": "Aşkarlama inamı",
+    "confNote": "Müstəqil detektor ailələrinin razılığı — ehtimal deyil. Heç bir detektor yoxlanılmış məlumatlarda kalibrə olunmayıb, buna görə kalibrə olunmuş ehtimal göstərilmir.",
+    "confText": {
+      "high": "Bütün {total} müstəqil detektor ailəsi razıdır: {direction}.",
+      "moderate": "{total} detektor ailəsindən {n}-i qərar verdi ({direction}); digəri qərar verə bilmədi.",
+      "limited": "Yalnız bir detektor ailəsi qərar verdi ({direction}).",
+      "conflict": "Detektor ailələri bir-birinə ziddir — detektor cədvəlinə baxın.",
+      "none": "Heç bir detektor ailəsi qərar vermədi."
+    },
+    "dirAi": "Sİ ilə yaradılıb",
+    "dirReal": "Sİ ilə yaradılmayıb",
+    "calProb": "Kalibrə olunmuş ehtimal: mövcud deyil.",
+    "detectorsTitle": "Ayrı-ayrı detektorların nəticələri",
+    "colDetector": "Detektor",
+    "colDecision": "Qərar",
+    "colScore": "Bal",
+    "colRule": "Qərar qaydası · giriş",
+    "familyLabel": "{family} ailəsi",
+    "familyVote": "səs: {vote}",
+    "familySplit": "əlaqəli modellər razılaşmır → səs yoxdur",
+    "familyRelated": "{n} əlaqəli model (biri digərindən öyrədilib) yalnız razılaşdıqda bir səs sayılır.",
+    "qualityTitle": "Təsvir keyfiyyəti xəbərdarlığı",
+    "qualitySmall": "Uzun tərəf cəmi {side} px-dir (etibarlı diapazon ≥ {min} px).",
+    "qualityCompressed": "Güclü JPEG sıxılması (keyfiyyət ~{q}, etibarlı diapazon > {max}).",
+    "qualityText": "Bu keyfiyyətdə detektorlar daha çox Sİ təsvirini buraxır (məsələn, messencer nüsxələri), buna görə {app} bu fayl üçün “Sİ yoxdur” demir. Varsa, orijinalı və ya ən böyük versiyanı yükləyin."
+  },
+  "history": {
+    "label": "Qeydlər",
+    "title": "Yoxlamaların tarixçəsi",
+    "search": "Fayl adı, yoxlama nömrəsi və ya SHA-256 üzrə axtarış…",
+    "all": "Hamısı",
+    "empty": "Uyğun yoxlama yoxdur.",
+    "cols": {
+      "image": "Təsvir",
+      "assessment": "Nəticə",
+      "aiScore": "Aşkarlama inamı",
+      "evidence": "Sübutlar",
+      "type": "Növ",
+      "date": "Tarix",
+      "actions": "Əməliyyatlar"
+    },
+    "demo": "demo",
+    "downloadPdf": "PDF yüklə",
+    "deleteScan": "Yoxlamanı sil",
+    "confirmDelete": "Bu yoxlama və saxlanılmış önbaxışlar silinsin?"
+  },
+  "about": {
+    "label": "Metodologiya",
+    "title": "{app} nəticəyə necə gəlir",
+    "detectorsTitle": "Sİ-təsvir detektorları necə işləyir",
+    "detectorsP1": "Detektorlar kamera fotoşəkilləri və yaradılmış təsvirlərdən ibarət etiketlənmiş toplular üzərində öyrədilmiş neyroşəbəkə təsnifatçılarıdır. Onlar bu iki sinfi fərqləndirən statistik qanunauyğunluqları (tekstura, tezlik xüsusiyyətləri, render artefaktları) öyrənir. {app} detektoru hər təsvirin 7 variantında (tam, güzgü, dörd yarım, mərkəzi fraqment) işlədir və medianı götürür. Bu qiymətlər **kalibrlənmiş ehtimallar deyil**: 0,95 o deməkdir ki, model “Sİ” sinfinə güclü üstünlük verir, təsvirin 95% ehtimalla yaradıldığını yox.",
+    "detectorsP2": "Qərarları yoxlanıla bilən etmək üçün {app} **örtmə həssaslığı xəritəsi** qurur: təsvir 8×8 şəbəkəyə bölünür, hər xana növbə ilə bulanıqlaşdırılır və detektor qiymətinin dəyişməsi ölçülür. Silinməsi Sİ qiymətini ən çox azaldan sahələr vurğulanır. Bu, modeldən alınmış həqiqi izahdır, lakin kobuddur.",
+    "forensicsTitle": "Təsvir ekspertizası nəyi aşkara çıxara bilər",
+    "forensics": {
+      "f1": "**EXIF / XMP** — kameranın istehsalçısı və modeli, çəkiliş parametrləri, redaktor proqramlar və redaktə tarixçəsi.",
+      "f2": "**Generator markerləri** — IPTC trainedAlgorithmicMedia, PNG bloklarında Stable Diffusion/ComfyUI parametrləri, istehsalçı teqləri.",
+      "f3": "**C2PA Content Credentials** — mövcud olduqda kriptoqrafik imzalı mənşə manifestləri.",
+      "f4": "**Xəta səviyyəsi analizi** — JPEG-i yenidən saxlayıb fərqi ölçmək fərqli sıxılma tarixçəsi olan sahələri üzə çıxara bilər.",
+      "f5": "**Üz analizi** — üzlər tapılır, sonra hər fraqmenti üz dəyişdirmə təsnifatçısı qiymətləndirir."
+    },
+    "rulesTitle": "Birləşdirmə qaydaları",
+    "rulesText": "Müxtəlif modellərin qiymətləri heç vaxt ortalanmır. Hər siqnal gücü göstərilmiş sübuta (güclü / orta / zəif) çevrilir, nəticəni isə sabit qaydalar toplusu müəyyən edir. İşə düşən qaydalar hər hesabatda göstərilir.",
+    "rules": {
+      "R1": "R1 Açıq Sİ generator metaməlumatı və ya C2PA Sİ bəyanı → ehtimal ki, Sİ ilə yaradılıb",
+      "R2": "R2 Bir detektor ailəsi “Sİ” deyir, heç biri “Sİ deyil” demir (tək xam ballı detektor üçün ≥0.90) → Ehtimal ki, Sİ ilə yaradılıb",
+      "R3": "R3 Ailələr “Sİ deyil” deyir, lakin orta redaktə əlamətləri var → Mümkün manipulyasiya",
+      "R4": "R4 Ailələr “Sİ deyil” deyir, kamera EXIF-i, redaktə əlaməti yoxdur → Ehtimal ki, həqiqi fotoşəkil",
+      "R4b": "R4b Ailələr “Sİ deyil” deyir, kamera mənşəyi yoxdur, keyfiyyət kafidir → Sİ ilə yaradılma əlaməti aşkarlanmadı (redaktə istisna edilmir)",
+      "R5": "R5 Sİ barədə razılıq olmadan orta güclü redaktə əlamətləri → mümkün manipulyasiya",
+      "R6": "R6 Digər hallarda → qəti nəticə yoxdur",
+      "R7": "R7 Detektor ailələri bir-birinə ziddir → Qəti nəticə yoxdur",
+      "R8": "R8 Çəkiliş parametrləri olan kamera EXIF-i, redaktə izi yoxdur, detektor ailəsi “Sİ deyil” deyir → Ehtimal ki, həqiqi",
+      "R1e": "R1e Sİ kompozit metaməlumatları (IPTC/C2PA) və ya Sİ təkmilləşdirmə tətbiqi → Ehtimal ki, Sİ ilə dəyişdirilmiş fotoşəkil",
+      "R2e": "R2e Detektorlar “Sİ” deyir + kamera çəkiliş EXIF-i → Ehtimal ki, Sİ ilə dəyişdirilmiş fotoşəkil",
+      "R9": "R9 Ailələr “Sİ deyil” deyir, lakin təsvir < 512 px və ya JPEG ≤ 75-dir (keyfiyyət filtri) → Qəti nəticə yoxdur"
+    },
+    "notDefTitle": "Nəticələr niyə qəti deyil",
+    "notDef": {
+      "n1": "Detektorlar öyrənmə məlumatlarından sonra çıxan generatorlara zəif uyğunlaşır.",
+      "n2": "Ölçünün dəyişdirilməsi, təkrar sıxılma, ekran görüntüləri və filtrlər detektorun cavabını tərsinə çevirə bilər.",
+      "n3": "Metaməlumat silinə (sosial şəbəkələrdə adi haldır) və ya saxtalaşdırıla bilər; onun olmaması heç nəyi sübut etmir.",
+      "n4": "ELA həqiqi təsvirlərdə də teksturları və kənarları vurğulayır.",
+      "n5": "Üz dəyişdirmə təsnifatçısı müəyyən face-swap toplularında öyrədilib və nəzərəçarpan sayda yanlış həyəcan verir."
+    },
+    "modelsTitle": "Modellər və lisenziyalar",
+    "cols": {
+      "model": "Model",
+      "description": "Təsvir",
+      "license": "Lisenziya",
+      "role": "Rol"
+    },
+    "models": {
+      "m1d": "Həqiqi və süni təsvirlər üzərində öyrədilmiş SwinV2 təsnifatçısı; 5 açıq detektorun müqayisəsindən sonra seçilib",
+      "m1r": "Sİ detektoru",
+      "m2d": "Həqiqi və dipfeyk üzlər üzərində əlavə öyrədilmiş ViT-B/16",
+      "m2r": "Yalnız üz fraqmentləri",
+      "m3d": "Yüngül CNN üz detektoru",
+      "m3r": "Üzlərin tapılması",
+      "m4d": "Community Forensics ViT-S/16-384 (frontier) — minlərlə generatorun təsvirlərində öyrədilib; müəllifin kalibratoru",
+      "m4r": "Sİ detektoru (2-ci ailə)",
+      "m5d": "Frontier modelinin aşağı keyfiyyət üçün öyrədilmiş versiyası (kiçildilmiş / sıxılmış təsvirlər); eyni ailə, müstəqil səs deyil",
+      "m5r": "Sİ detektoru (2-ci ailə)"
+    },
+    "privacyTitle": "Məxfilik prinsipləri",
+    "privacy": {
+      "p1": "Bütün analiz lokal aparılır; heç bir təsvir xarici xidmətə göndərilmir.",
+      "p2": "Yüklənən məlumatlar yaddaşda emal olunur. Yalnız metaməlumatsız kiçildilmiş önbaxış və analiz qatları saxlanılır; yoxlamanın silinməsi onları da silir.",
+      "p3": "Fayllar genişləmə, imza və tam dekodlaşdırma ilə yoxlanılır; “açılma bombaları” rədd edilir.",
+      "p4": "GPS koordinatları heç vaxt göstərilmir və hesabatlarda saxlanılmır.",
+      "p5": "Təsvirlər yalnız API vasitəsilə yoxlama nömrəsi üzrə verilir, heç vaxt ictimai qovluqdan yox."
+    },
+    "detectorsP3": "Hər təsvirdə **iki müstəqil detektor ailəsi** işləyir: SwinV2 və Community Forensics (iki əlaqəli ViT modeli: frontier və onun aşağı keyfiyyət üçün öyrədilmiş versiyası, minlərlə generatorda öyrədilib). Əlaqəli modellər yalnız razılaşdıqda **bir səs** verir. Ailələr bir-birinə zidd olarsa, nəticə “Qəti nəticə yoxdur” olur. Kiçik (< 512 px) və ya güclü sıxılmış (JPEG ≤ 75) təsvirlərdə {app} heç vaxt “Sİ aşkarlanmadı” demir, çünki orada detektorlar daha çox Sİ təsvirini buraxır."
+  },
+  "status": {
+    "label": "Vəziyyət yoxlaması",
+    "title": "Sistemin vəziyyəti:",
+    "ready": "hazırdır",
+    "degraded": "məhdud rejim",
+    "unreachable": "Server əlçatan deyil. Onu {cmd} əmri ilə işə salın.",
+    "running": "Vəziyyət yoxlanılır…",
+    "core": "Əsas komponentlər",
+    "backend": "Server API-si",
+    "database": "Verilənlər bazası (SQLite)",
+    "modelsLoaded": "Modellər başlanğıcda yükləndi",
+    "detectorReady": "Əsas detektor hazırdır",
+    "faceDetector": "Üz detektoru: {name}",
+    "gpu": "GPU: {name}",
+    "cpuOnly": "yoxdur (CPU üzərində hesablama)",
+    "offline": "Oflayn rejim (işləmə zamanı model mərkəzinə müraciət yoxdur)",
+    "models": "Modellər",
+    "deps": "Asılılıqlar",
+    "depsNote": "Python {py} · maksimum yükləmə həcmi {mb} MB. İstəyə bağlı: exiftool, c2pa (olmadıqda imza üzrə axtarış istifadə olunur)."
+  },
+  "verdict": {
+    "ai_likely": "Ehtimal ki, Sİ ilə yaradılıb",
+    "authentic_likely": "Ehtimal ki, həqiqi fotoşəkil",
+    "not_ai": "Sİ ilə yaradılma əlaməti aşkarlanmadı",
+    "manipulated_possible": "Mümkün manipulyasiya / redaktə",
+    "inconclusive": "Qəti nəticə yoxdur",
+    "ai_edited": "Ehtimal ki, Sİ ilə dəyişdirilmiş fotoşəkil"
+  },
+  "verdictShort": {
+    "ai_likely": "Ehtimal ki, Sİ",
+    "authentic_likely": "Ehtimal ki, həqiqi",
+    "not_ai": "Sİ aşkarlanmadı",
+    "manipulated_possible": "Mümkün redaktə",
+    "inconclusive": "Qəti deyil",
+    "ai_edited": "Sİ ilə dəyişdirilib"
+  },
+  "strength": {
+    "strong": "güclü",
+    "moderate": "orta",
+    "weak": "zəif"
+  },
+  "evidenceStrength": {
+    "strong": "yüksək",
+    "moderate": "orta",
+    "limited": "məhdud",
+    "insufficient": "kifayət deyil"
+  },
+  "band": {
+    "very_high": "çox yüksək",
+    "high": "yüksək",
+    "elevated": "artırılmış",
+    "uncertain": "qeyri-müəyyən",
+    "low": "aşağı",
+    "very_low": "çox aşağı"
+  },
+  "source": {
+    "detector": "detektor",
+    "metadata": "metaməlumat",
+    "provenance": "mənşə",
+    "timeline": "xronologiya",
+    "ela": "ELA",
+    "face": "üz"
+  },
+  "signalStatus": {
+    "points_ai": "Sİ-yə işarə edir",
+    "points_camera": "Kameraya işarə edir",
+    "points_edit": "Emal / redaktə",
+    "neutral": "Neytral",
+    "unreliable": "Etibarsız",
+    "unavailable": "Əlçatan deyil"
+  },
+  "signalGroup": {
+    "ai": "Sİ ilə yaradılma",
+    "provenance": "Mənşə",
+    "processing": "Emal",
+    "compression": "Sıxılma",
+    "properties": "Təsvirin xüsusiyyətləri",
+    "faces": "Üzlər"
+  },
+  "checkStatus": {
+    "ok": "UYĞUNDUR",
+    "info": "MƏLUMAT",
+    "notice": "DİQQƏT",
+    "warning": "ZİDDİYYƏT"
+  },
+  "tz": {
+    "stated": "göstərilib",
+    "local": "göstərilməyib (yerli vaxt)",
+    "utc": "UTC"
+  },
+  "tlSource": {
+    "exif": "EXIF",
+    "exifGps": "EXIF GPS",
+    "xmp": "XMP",
+    "xmpHistory": "XMP redaktə tarixçəsi",
+    "png": "PNG mətn bloku",
+    "app": "Detective AI"
+  },
+  "views": {
+    "full": "tam",
+    "flip": "güzgü",
+    "top": "yuxarı",
+    "bottom": "aşağı",
+    "left": "sol",
+    "right": "sağ",
+    "center": "mərkəz"
+  },
+  "stage": {
+    "metadata": "metaməlumat",
+    "timeline": "xronologiya",
+    "ai_detection": "Sİ detektoru",
+    "saliency": "əhəmiyyət",
+    "ela": "ELA",
+    "faces": "üzlər",
+    "aggregation": "birləşdirmə"
+  },
+  "errors": {
+    "empty": "Yüklənən fayl boşdur.",
+    "tooLarge": "Fayl {mb} MB limitini aşır.",
+    "badExtension": "Fayl genişləməsi dəstəklənmir. İcazə verilir: {allowed}.",
+    "notImage": "Faylın məzmunu icazə verilən növdə ({allowed}) təsvir deyil.",
+    "formatNotAllowed": "Təsvir formatına icazə verilmir.",
+    "tooManyPixels": "Təsvirin ölçüləri həddən artıq böyükdür (ehtimal ki, “açılma bombası”).",
+    "tooSmall": "Təsvir çox kiçikdir (minimum {min} piksel).",
+    "bomb": "Təsvir rədd edildi: “açılma bombası”na qarşı qoruma işə düşdü.",
+    "decode": "Təsviri təhlükəsiz dekodlamaq mümkün olmadı; ola bilsin, zədələnib.",
+    "analysisFailed": "Analiz daxili xəta səbəbindən dayandı.",
+    "scanNotFound": "Yoxlama tapılmadı.",
+    "sampleNotFound": "Nümunə tapılmadı.",
+    "notFound": "Tapılmadı.",
+    "notAvailable": "Əlçatan deyil.",
+    "internal": "Serverin daxili xətası.",
+    "network": "Şəbəkə xətası: server əlçatan deyil.",
+    "requestFailed": "Sorğu yerinə yetirilmədi ({status}).",
+    "browserDecode": "Brauzer təsviri dekodlaya bilmədi; ola bilsin, zədələnib.",
+    "unsupportedType": "Fayl növü dəstəklənmir. JPG, PNG, WEBP, HEIC və ya AVIF istifadə edin.",
+    "fileTooBig": "Faylın həcmi {size}-dır — limit {mb} MB-dır."
+  },
+  "dyn": {
+    "lim": {
+      "noDetector": "Heç bir Sİ-təsvir detektoru əlçatan olmadı; qiymətləndirmə yalnız metaməlumatlara əsaslanır.",
+      "unstable": "{model} bu təsvirdə qeyri-sabitdir: onun qiyməti eyni təsvirin variantları arasında dəyişir ({views}).{cause} Detektorun nəticəsi nəzərə alınmır.",
+      "unstableCause": " Ehtimal olunan səbəb: təsvir cəmi {w}×{h} pikseldir, ona görə onun yarıları ({crop} piksel) detektorun giriş ölçüsündən ({input} piksel) kiçikdir və böyüdülməli olur.",
+      "viewScore": "{view} {score}",
+      "uncertainScore": "{model} qeyri-müəyyən qiymət verdi ({score}).",
+      "singleDetector": "Yalnız bir Sİ detektoru nəticə verdi; nəticə məhdud sübutlara əsaslanır.",
+      "disagree": "Müstəqil detektor ailələri bir-birinə ziddir; bu, qeyri-tipik təsvirlərdə tez-tez olur.",
+      "noExif": "EXIF metaməlumatı yoxdur. Bu, ekran görüntüləri, sosial şəbəkələrdə təkrar paylaşılan və məxfilik üçün təmizlənmiş fayllar üçün adi haldır və Sİ ilə yaradılmanın sübutu DEYİL.",
+      "lowJpeg": "Aşağı JPEG keyfiyyəti (~{q}) bütün detektorların işini zəiflədir.",
+      "c2paInvalid": "C2PA manifesti Sİ ilə yaradılmanı bəyan edir, lakin yoxlamadan keçmədi ({issues}): təsvir imzadan sonra dəyişdirilib və ya manifest saxtadır, ona görə bu bəyan nəzərə alınmır.",
+      "c2paUntrusted": "C2PA-nın Sİ bəyanı kriptoqrafik baxımdan pozulmayıb, lakin imzalayan rəsmi C2PA etibar siyahısı ilə yoxlanılmayıb (oflayn rejim). Özbaşına yaradılmış sertifikatla imzalanmış manifest də eyni görünərdi; hesabatda göstərilən emitenti yoxlayın.",
+      "xmpTruncated": "Faylın XMP metaməlumatı qeyri-adi dərəcədə böyükdür (> 512 KB); yalnız ilk 512 KB təhlil edilib.",
+      "smallImage": "Kiçik təsvir ({w}×{h} piksel). Aşağı ölçülü fayllarda detektorlar ən az etibarlıdır; varsa, orijinalı və ya ən böyük versiyanı yükləyin.",
+      "noEditDetection": "{app} Sİ ilə yaradılmanı aşkarlayır, lakin Photoshop redaktələrini, kollajları, yapışdırılmış fraqmentləri və üzərinə əlavə edilmiş mətni etibarlı şəkildə AŞKARLAMIR.",
+      "notCalibrated": "Detektor qiymətləri modellərin nəticələridir, kalibrlənmiş ehtimallar deyil.",
+      "evasion": "Yeni generatorlar və məqsədyönlü sonrakı emal detektorlardan yayına bilər.",
+      "familySplit": "{family} modelləri razılaşmır ({members}). Əlaqəli modellər olduğu üçün ailə səs vermir.",
+      "familyUncertain": "{family} modelləri qərar vermədi ({members}).",
+      "qualityGate": "Detektorlar Sİ tapmadı, lakin təsvir kiçik və ya güclü sıxılıb (uzun tərəf {side} px, JPEG ~{q}; etibarlı diapazon: ≥ {min_side} px və keyfiyyət > {max_q}). Belə şəraitdə detektorlar daha çox Sİ təsvirini buraxır, buna görə “Sİ aşkarlanmadı” nəticəsi verilmir.",
+      "vendorCalibrated": "Community Forensics balları model müəllifinin öz məlumatlarında qurulmuş və {app} məlumatlarında yoxlanılmamış kalibratorundan istifadə edir. Onlar ehtimal deyil, model ballarıdır."
+    },
+    "ev": {
+      "detectorScore": "{model}: Sİ ilə yaradılma qiyməti {score} ({band})",
+      "markers": "Daxil edilmiş generator markerləri: {markers}",
+      "c2paPresent": "C2PA Content Credentials mövcuddur. Manifesti öyrənin: bu məlumatlar Sİ ilə yaradılmanı da bəyan edə bilər.",
+      "c2paPresentGen": "C2PA Content Credentials mövcuddur (generator: {gen}). Manifesti öyrənin: bu məlumatlar Sİ ilə yaradılmanı da bəyan edə bilər.",
+      "cameraExif": "Çəkiliş parametrləri ilə kamera EXIF-i var ({camera}). EXIF saxtalaşdırıla və ya köçürülə bilər.",
+      "cameraMake": "EXIF-də kameranın istehsalçısı və modeli göstərilib.",
+      "editSoftware": "Redaktor proqramlar qeyd olunub: {tools}",
+      "xmpHistory": "XMP redaktə tarixçəsi var.",
+      "timeline": "{title}: {detail}",
+      "ela": "Xəta səviyyəsinin qeyri-bircinsliyi {value} (>1,2): sahələr fərqli sıxılır. Bu, yapışdırmanı göstərə bilər, lakin teksturlu təsvirlərdə də rast gəlinir.",
+      "facesFlagged": "Üz dəyişdirmə təsnifatçısının ≥0,85 qiymət verdiyi üz sayı: {n} (ID {ids}).",
+      "facesClean": "Təhlil olunan üz sayı: {n}; heç biri dəyişdirmə həddini aşmadı.",
+      "member": "{name}: {decision} ({score})",
+      "family": "{family} ailəsi ({n} əlaqəli model razıdır): {members}",
+      "detectorDecision": "{model}: {decision} (müəllif kalibrləməli bal {score})",
+      "aiEditTool": "Metaməlumatlarda Sİ ilə təkmilləşdirmə / üz dəyişdirmə tətbiqi qeyd olunub: {tools}"
+    },
+    "rule": {
+      "R1": "R1: Açıq Sİ generator metaməlumat markerləri var → ehtimal ki, Sİ ilə yaradılıb.",
+      "R2": "R2: Ən azı bir müstəqil detektor ailəsi “Sİ” deyir və heç biri “Sİ deyil” demir (əlaqəli modellər yalnız razılaşdıqda səs verir; tək xam ballı detektor üçün ≥0.90 lazımdır) → Ehtimal ki, Sİ ilə yaradılıb.",
+      "R3": "R3: Detektor ailələri “Sİ deyil” deyir, lakin redaktə əlamətləri var → Mümkün manipulyasiya.",
+      "R4": "R4: Detektor ailələri “Sİ deyil” deyir, kamera EXIF-i var və redaktə əlamətləri yoxdur → Ehtimal ki, həqiqi fotoşəkil.",
+      "R4b": "R4b: Detektor ailələri “Sİ deyil” deyir, lakin kamera mənşəyi yoxdur → Sİ ilə yaradılma əlaməti aşkarlanmadı (redaktə/montaj istisna edilmir).",
+      "R5": "R5: Sİ detektorlarının razılığı olmadan orta güclü redaktə/manipulyasiya əlamətləri → mümkün manipulyasiya.",
+      "R6": "R6: Sübutlar ziddiyyətli, qeyri-müəyyən və ya kifayət deyil → qəti nəticə yoxdur.",
+      "R7": "R7: Müstəqil detektor ailələri bir-birinə ziddir → Qəti nəticə yoxdur.",
+      "R8": "R8: Çəkiliş parametrləri olan kamera EXIF-i, redaktə izi yoxdur və ən azı bir detektor ailəsi “Sİ deyil” deyir → Ehtimal ki, həqiqi (EXIF saxtalaşdırıla bilər; sübut məhduddur).",
+      "R1e": "R1e: Metaməlumatlar Sİ kompozitini (IPTC/C2PA compositeWithTrainedAlgorithmicMedia) bəyan edir və ya Sİ təkmilləşdirmə / üz dəyişdirmə tətbiqini göstərir → Ehtimal ki, Sİ ilə dəyişdirilmiş fotoşəkil.",
+      "R2e": "R2e: Detektorlar “Sİ” deyir, lakin kamera çəkiliş EXIF-i var → Ehtimal ki, Sİ ilə dəyişdirilmiş fotoşəkil (və ya kamera metaməlumatları kopyalanmış Sİ təsviri).",
+      "R9": "R9: Detektorlar “Sİ deyil” deyir, lakin təsvir Sİ-ni istisna etmək üçün çox kiçik və ya çox sıxılıb (keyfiyyət filtri) → Qəti nəticə yoxdur."
+    },
+    "rec": {
+      "ai_likely": {
+        "1": "Paylaşmazdan əvvəl ilkin mənbəni və dərc kontekstini tapın.",
+        "2": "Əvvəlki versiyaları tapmaq üçün tərs təsvir axtarışı aparın.",
+        "3": "İddia olunan müəllifdən C2PA Content Credentials olub-olmadığını yoxlayın."
+      },
+      "authentic_likely": {
+        "1": "Detektorlar bu təsviri qeyd etməyib, lakin bu, onun həqiqiliyini sübut etmir.",
+        "2": "Mümkünsə, mənbəni, tarixi və yeri təsdiqləyin."
+      },
+      "not_ai": {
+        "1": "Təsvir Sİ ilə yaradılmış kimi görünmür, lakin yenə də redaktə oluna, hissələrdən yığıla və ya kontekstdən çıxarıla bilər.",
+        "2": "Tərs təsvir axtarışı ilə orijinalı tapın və bu nüsxə ilə müqayisə edin.",
+        "3": "Göndərəndən kameranın metaməlumatları ilə ilkin faylı istəyin."
+      },
+      "manipulated_possible": {
+        "1": "Redaktə olunmuş sahələri tapmaq üçün təsvirin digər nüsxələri ilə müqayisə edin.",
+        "2": "Mənbədən emal olunmamış ilkin faylı istəyin."
+      },
+      "inconclusive": {
+        "1": "Təsviri yoxlanılmamış hesab edin.",
+        "2": "Daha keyfiyyətli orijinalı əldə edin və yenidən yoxlayın.",
+        "3": "Müstəqil mənşə yoxlamalarından (mənbə, tərs axtarış, C2PA) istifadə edin."
+      },
+      "ai_edited": {
+        "1": "Təsvir Sİ ilə dəyişdirilmiş real foto kimi görünür; göndərəndən redaktə olunmamış orijinalı istəyin.",
+        "2": "Nəyin dəyişdirildiyini tapmaq üçün digər nüsxələrlə müqayisə edin (tərs təsvir axtarışı).",
+        "3": "Faylın C2PA Content Credentials və redaktə tarixçəsini yoxlayın."
+      }
+    },
+    "method": "Müstəqil detektor ailələri üzərində qaydalara əsaslanan birləşdirmə. Hər detektor öz dərc olunmuş qaydası ilə qərar verir; əlaqəli modellər yalnız razılaşdıqda birlikdə səs verir; ailələrin ziddiyyəti “Qəti nəticə yoxdur” verir; kiçik və ya güclü sıxılmış təsvirlərdə “Sİ aşkarlanmadı” nəticəsi heç vaxt verilmir. Müxtəlif modellərin balları heç vaxt ortalanmır və bir şkalada müqayisə olunmur, heç bir bal kalibrə olunmuş ehtimal kimi təqdim edilmir.",
+    "marker": {
+      "iptcTrained": "IPTC DigitalSourceType = trainedAlgorithmicMedia (Sİ ilə yaradıldığı bəyan olunub)",
+      "iptcComposite": "IPTC DigitalSourceType = compositeWithTrainedAlgorithmicMedia",
+      "midjourney": "Metaməlumatda Midjourney markeri",
+      "dalle": "Metaməlumatda DALL·E markeri",
+      "sd": "Metaməlumatda Stable Diffusion markeri",
+      "comfyui": "Metaməlumatda ComfyUI iş axını markeri",
+      "novelai": "Metaməlumatda NovelAI markeri",
+      "firefly": "Metaməlumatda Adobe Firefly markeri",
+      "imagen": "Metaməlumatda Google Imagen markeri",
+      "openai": "Metaməlumatda OpenAI markeri",
+      "sampler": "Diffuziya modelinin sempler parametrləri daxil edilib",
+      "prompt": "Diffuziya modelinin prompt parametrləri daxil edilib",
+      "c2pa": "C2PA Content Credentials Sİ ilə yaradılmanı bəyan edir ({types}; imzalayan: {generator}, emitent {issuer}; {trust})",
+      "c2paTrusted": "imzalayan etibar siyahısı ilə yoxlanılıb",
+      "c2paUntrusted": "imza pozulmayıb; imzalayanın kimliyi C2PA etibar siyahısı ilə yoxlanılmayıb (oflayn)"
+    },
+    "sig": {
+      "ai": {
+        "name": "Sİ-təsvir detektoru ({model})",
+        "unavailableFinding": "Detektor işə düşmədi.",
+        "unavailableMeaning": "Bu model Sİ ilə yaradılma barədə məlumat vermədi.",
+        "unreliableValue": "median {median}, variantların {pct}%-i razılaşır",
+        "unreliableFinding": "Detektorun qiyməti eyni təsvirin variantları arasında dəyişir.{small}",
+        "unreliableSmall": " Təsvir cəmi {w}×{h} pikseldir — etibarlı fraqmentlər üçün çox kiçikdir.",
+        "unreliableMeaning": "Təsvir modelin etibarlı işlədiyi sahədən kənardadır (kiçik, güclü sıxılmış və ya qeyri-adi təsvirlərdə belə olur). Onun nəticəsinə məhəl qoyulmamalıdır.",
+        "aiFinding": "Modelin nəticəsi öyrənmədəki Sİ təsvirlərinə güclü uyğun gəlir — bütün 7 variantda sabit şəkildə.",
+        "aiMeaning": "Yaradılmanın statistik əlamətidir, sübut deyil: yeni generatorlar və bəzi həqiqi fotolar da onu yarada bilər.",
+        "camFinding": "Modelin nəticəsi Sİ təsvirlərinə bənzəmir — bütün 7 variantda sabit şəkildə.",
+        "camMeaning": "Sİ ilə yaradılma əlaməti tapılmadı. Bu, Photoshop redaktələrini və kollajları istisna ETMİR.",
+        "neutralFinding": "Modelin nəticəsi qeyri-müəyyən orta diapazondadır.",
+        "neutralMeaning": "Detektor bu təsvir üzrə qərar verə bilmir.",
+        "calValue": "{score} (müəllif kalibrləməsi) · logit {logit}",
+        "cfAiFinding": "Modelin xam logiti müəllifin dərc etdiyi qərar sərhədindən yuxarıdır (mərkəzi kəsik 384 px).",
+        "cfCamFinding": "Modelin xam logiti müəllifin dərc etdiyi qərar sərhədindən aşağıdır (mərkəzi kəsik 384 px)."
+      },
+      "markers": {
+        "name": "Metaməlumatda generator markerləri",
+        "foundFinding": "Fayl Sİ ilə yaradılmanı bəyan edir və ya onun parametrlərini ehtiva edir.",
+        "foundMeaning": "Güclü sübutdur: belə teqləri generatorlar və Sİ alətləri yazır. Onlar silinə bilər, ona görə olmamaları az şey deyir.",
+        "noneValue": "yoxdur",
+        "noneFinding": "IPTC, C2PA və ya promptlarda Sİ alətlərinin markeri yoxdur.",
+        "noneMeaning": "Olmaması həm həqiqi, həm də yaradılmış təsvirlər üçün adi haldır."
+      },
+      "c2pa": {
+        "name": "C2PA Content Credentials",
+        "aiFinding": "Kriptoqrafik imzalı manifest təsvirin generativ Sİ ilə yaradıldığını bildirir.",
+        "aiMeaning": "Sİ mənşəyinin ən güclü əlçatan sübutu: onu generatorun özü imzalayıb. Ekran görüntüsü çəkildikdə, yenidən saxlanıldıqda və əksər messencerlərdən göndərildikdə itir.",
+        "presentValue": "var",
+        "presentFinding": "İmzalı mənşə manifesti daxil edilib.",
+        "presentMeaning": "Bu məlumatlar faylın hansı alətlə yaradıldığını və ya dəyişdirildiyini qeyd edir; manifesti öyrənin (o özü də Sİ bəyan edə bilər).",
+        "absentValue": "yoxdur",
+        "absentFinding": "Content Credentials manifesti yoxdur.",
+        "absentMeaning": "Bu gün təsvirlərin əksəriyyətində yoxdur; bu gözləniləndir və şübhəli deyil."
+      },
+      "camera": {
+        "name": "Kamera EXIF-i",
+        "fullFinding": "Kameranın istehsalçısı, modeli və çəkiliş parametrləri var.",
+        "fullMeaning": "Kamera orijinalı üçün xarakterikdir. EXIF köçürülə və ya saxtalaşdırıla bilər, ona görə bu, yalnız köməkçi sübutdur.",
+        "partFinding": "Kameranın istehsalçısı və modeli var, çəkiliş parametrləri yoxdur.",
+        "partMeaning": "Mənşəyə zəif işarə.",
+        "absentValue": "yoxdur",
+        "absentFinding": "Faylda kamera barədə məlumat yoxdur.",
+        "absentMeaning": "Messencerlər, sosial şəbəkələr, ekran görüntüləri və məxfilik alətləri EXIF-i silir. Onun olmaması Sİ ilə yaradılmanın və ya manipulyasiyanın sübutu DEYİL."
+      },
+      "edit": {
+        "name": "Redaktor proqramların izləri",
+        "foundFinding": "Metaməlumatda qeyd olunub: {tools}.",
+        "historyValue": "XMP tarixçəsi",
+        "historyTools": "redaktə tarixçəsi",
+        "foundMeaning": "Fayl redaktor proqramdan keçib. Bu, emaldan (sadəcə kəsmə və ya ixrac ola bilər) xəbər verir, nəyin dəyişdirildiyindən yox.",
+        "noneValue": "yoxdur",
+        "noneFinding": "Məlum redaktor proqramlar qeyd olunmayıb.{sw}",
+        "noneSw": " Software teqi: {sw}.",
+        "noneMeaning": "Olmaması redaktə edilmədiyini bildirmir: redaktorlar metaməlumatı silə bilər."
+      },
+      "timeline": {
+        "name": "Tarixlərin uyğunluğu",
+        "warnValue": "ziddiyyət sayı: {n}",
+        "warnMeaning": "Ziddiyyətli tarixlər redaktə olunmuş metaməlumata və ya cihazın səhv qurulmuş saatına işarə edir.",
+        "okValue": "tarix sayı: {n}, uyğundur",
+        "okFinding": "Daxili tarixlər bir-birinə zidd deyil.",
+        "okMeaning": "Uyğun metaməlumat həqiqi fayllar üçün gözləniləndir, lakin onu da saxtalaşdırmaq olar.",
+        "noneValue": "tarix yoxdur",
+        "noneFinding": "Müqayisə ediləcək heç nə yoxdur.",
+        "noneMeaning": "Tarixlərin olmaması manipulyasiyanın sübutu deyil."
+      },
+      "jpeg": {
+        "name": "JPEG keyfiyyətinin qiymətləndirilməsi",
+        "finding": "Kvantlaşdırma cədvəlləri ≈{q} keyfiyyətinə uyğundur.",
+        "meaning": "Kamera orijinallarında adətən 90–98 olur; ≤85 dəyərləri tətbiq, sayt və ya messencer tərəfindən təkrar sıxılmanı göstərir və bu, digər bütün detektorları da zəiflədir.",
+        "naFinding": "Fayl JPEG formatında deyil.",
+        "naMeaning": "PNG, WEBP, HEIC və AVIF-də JPEG kvantlaşdırma cədvəlləri yoxdur."
+      },
+      "reshare": {
+        "name": "Təkrar göndərmə izləri",
+        "value": "{w}×{h}, q≈{q}, EXIF-siz",
+        "finding": "Ölçü, keyfiyyət və silinmiş metaməlumat messencer və ya sosial şəbəkə vasitəsilə təkrar yükləməyə uyğundur.",
+        "meaning": "Ehtimal ki, bu, orijinal deyil. Mənşə məlumatlarını əldə etmək üçün ilkin faylı istəyin."
+      },
+      "dims": {
+        "name": "Ölçülər",
+        "genFinding": "Hər iki tərəf 64-ə bölünür və diffuziya modellərinin tipik ölçülərinə uyğundur.",
+        "genMeaning": "Yalnız zəif işarədir: bir çox kəsilmiş və ixrac olunmuş təsvirlər də belə ölçüdə olur.",
+        "finding": "Ölçülər qeydə alınıb.",
+        "meaning": "Ölçülər özlüyündə mənşəni göstərmir."
+      },
+      "ela": {
+        "name": "Xəta səviyyəsi analizi",
+        "value": "qeyri-bircinslik {nu}",
+        "unevenFinding": "Sahələr qeyri-bərabər sıxılır.",
+        "evenFinding": "Sahələr kifayət qədər bərabər sıxılır.",
+        "meaning": "Qeyri-bərabər xəta səviyyəsi yapışdırılmış fraqmentləri üzə çıxara bilər, lakin teksturlar və kənarlar da buna səbəb olur. “Ekspertiza sübutları” bölməsindəki ELA təsvirinə baxın."
+      },
+      "faces": {
+        "name": "Üz dəyişdirmə təsnifatçısı",
+        "valueMax": "üz sayı: {n}; maksimum {max}",
+        "value": "üz sayı: {n}",
+        "flaggedFinding": "0,85-dən yüksək qiymətli üz sayı: {n}.",
+        "okFinding": "Heç bir üz 0,85 həddini aşmadı.",
+        "meaning": "Face-swap toplularında öyrədilib; həqiqi üzlər 0,7–0,8 ala bilər, ona görə yalnız çox yüksək qiymətlər qeyd olunur.",
+        "noneValue": "üz yoxdur",
+        "noneFinding": "Üz aşkarlanmadı.",
+        "noneMeaning": "Üz dəyişdirmə analizi tətbiq olunmur."
+      },
+      "quality": {
+        "name": "Sİ aşkarlanması üçün təsvir keyfiyyəti",
+        "value": "uzun tərəf {side} px · JPEG {q}",
+        "lowFinding": "Etibarlı diapazondan aşağıdır (uzun tərəf ≥ {min_side} px və JPEG keyfiyyəti > {max_q}).",
+        "okFinding": "Etibarlı diapazondadır (uzun tərəf ≥ {min_side} px, JPEG keyfiyyəti > {max_q}).",
+        "lowMeaning": "Bu ölçü / sıxılmada detektorlar daha çox Sİ təsvirini buraxır (məsələn, messencer nüsxələri). Burada “Sİ deyil” nəticəsinə etibar edilmir.",
+        "okMeaning": "Təsvir keyfiyyəti detektorları məhdudlaşdırmır."
+      }
+    },
+    "tl": {
+      "ev": {
+        "dateTimeOriginal": "Kameranın məlumatına görə çəkiliş anı.",
+        "dateTimeDigitized": "Rəqəmsallaşdırma anı (rəqəmsal kameralarda çəkilişlə üst-üstə düşür).",
+        "modify": "Faylın proqram tərəfindən sonuncu dəfə yazıldığı an{sw}.",
+        "modifySw": " ({sw})",
+        "gps": "Koordinatlarla birlikdə qeydə alınmış peyk vaxtı (UTC). Koordinatların özü gizlədilib.",
+        "xmpCreate": "Müəllif proqramın yazdığı yaradılma tarixi.",
+        "xmpModify": "Proqramın yazdığı son dəyişiklik tarixi.",
+        "xmpMetadata": "Metaməlumat blokunun sonuncu dəfə dəyişdirildiyi an.",
+        "psCreated": "Adobe XMP ad sahəsində yaradılma tarixi.",
+        "xmpExifOriginal": "XMP-yə köçürülmüş çəkiliş tarixi.",
+        "history": "Redaktə tarixçəsi qeydi: “{action}”{agent}.",
+        "historyAgent": " — {agent}",
+        "png": "Proqramın PNG mətn blokunda saxladığı vaxt nişanı.",
+        "scan": "Fayl qəbul edildi; SHA-256 bu anda hesablandı.",
+        "scanField": "Analiz üçün qəbul olunub"
+      },
+      "chk": {
+        "no_timestamps": {
+          "title": "Daxili tarix yoxdur",
+          "detail": "Faylda EXIF, XMP və ya PNG tarixləri yoxdur.",
+          "meaning": "Çox geniş yayılmış haldır: messencerlər və sosial şəbəkələr metaməlumatı silir, ekran görüntüləri və Sİ alətləri isə çox vaxt onu yazmır. Bu, manipulyasiyanın və ya Sİ ilə yaradılmanın sübutu DEYİL."
+        },
+        "modify_before_capture": {
+          "title": "Dəyişiklik tarixi çəkiliş tarixindən əvvəldir",
+          "detail": "ModifyDate {modify} DateTimeOriginal {orig} tarixindən {hours} saat əvvəldir.",
+          "meaning": "Toxunulmamış fayl üçün bu, mümkün deyil. Adətən səbəb kamera saatının sıfırlanması və ya metaməlumatın redaktə olunması, yaxud başqa fayldan köçürülməsidir."
+        },
+        "modified_after_capture": {
+          "title": "Fayl çəkilişdən sonra yenidən yazılıb",
+          "detail": "Son yazılma çəkilişdən {days} gün sonra{sw}.",
+          "detailSw": " (“{sw}” proqramı ilə)",
+          "meaning": "Fayl çəkilişdən sonra yenidən saxlanılıb (redaktə, döndərmə, ixrac və ya metaməlumat dəyişikliyi). Bu, məzmunun dəyişdirildiyini sübut etmir."
+        },
+        "capture_modify_consistent": {
+          "title": "Çəkiliş və dəyişiklik tarixləri üst-üstə düşür",
+          "detail": "ModifyDate DateTimeOriginal-dan ən çox 2 dəqiqə fərqlənir.",
+          "meaning": "Redaktorda yenidən saxlanılmamış fayla uyğundur. Metaməlumatı yenə də saxtalaşdırmaq olar."
+        },
+        "orig_digitized_mismatch": {
+          "title": "Çəkiliş və rəqəmsallaşdırma tarixləri fərqlidir",
+          "detail": "{a} və {b}.",
+          "meaning": "Skan edilmiş plyonka üçün normaldır; telefon və ya rəqəmsal kamera fotosu üçün qeyri-adidir."
+        },
+        "future_dates": {
+          "title": "Gələcəkdəki tarixlər",
+          "detail": "{list}",
+          "meaning": "Analiz anından sonrakı tarix cihazın səhv saatını və ya redaktə olunmuş metaməlumatı göstərir."
+        },
+        "implausible_dates": {
+          "title": "Ağlabatan olmayan dərəcədə köhnə tarixlər",
+          "detail": "{list}",
+          "meaning": "Adətən saatı qurulmamış kameradır (məsələn, 1970/1980 standart dəyərləri)."
+        },
+        "exif_xmp_mismatch": {
+          "title": "EXIF və XMP-dəki yaradılma tarixləri fərqlidir",
+          "detail": "EXIF {exif} və XMP {xmp} (fərq {hours} saat, tam saat qurşağı sürüşməsi deyil).",
+          "meaning": "Bu iki metaməlumat bloku adətən üst-üstə düşür. Fərq metaməlumatın redaktə olunduğunu və ya müxtəlif fayllardan birləşdirildiyini göstərir."
+        },
+        "gps_time_mismatch": {
+          "title": "GPS vaxtı çəkiliş vaxtından çox fərqlənir",
+          "detail": "Fərq {hours} saat (saat qurşaqları ən çox 14 saatı izah edir).",
+          "meaning": "GPS vaxtı peyklərdən gəlir və onda səhv etmək çətindir; böyük fərq redaktə olunmuş metaməlumata və ya köhnəlmiş GPS məlumatına işarə edir."
+        },
+        "gps_time_consistent": {
+          "title": "GPS vaxtı çəkiliş vaxtı ilə uyğundur",
+          "detail": "Fərq {hours} saat (saat qurşaqları daxilində).",
+          "meaning": "Müstəqil saatlar üst-üstə düşür."
+        },
+        "software_no_time_change": {
+          "title": "Proqram göstərilib, lakin dəyişiklik vaxtı yazılmayıb",
+          "detail": "Software: {sw}.",
+          "meaning": "Bir çox telefon bura proqram təminatının və ya tətbiqin versiyasını yazır, ona görə bu, adətən zərərsizdir."
+        },
+        "edit_history": {
+          "title": "Redaktə tarixçəsi: hadisə sayı — {n}",
+          "detail": "Əməliyyatlar: {actions}{agents}.",
+          "detailAgents": "; proqramlar: {agents}",
+          "meaning": "Fayl onun redaktorda açıldığını, saxlanıldığını və ya çevrildiyini qeyd edir. Bu, emaldan xəbər verir, nəyin dəyişdirildiyindən yox."
+        },
+        "no_inconsistency": {
+          "title": "Tarixlərdə ziddiyyət tapılmadı",
+          "detail": "Yoxlanılan daxili tarix sayı: {n}.",
+          "meaning": "Ziddiyyətin olmaması həqiqiliyi sübut etmir: saxtakar uyğun metaməlumat yaza bilər."
+        }
+      }
+    },
+    "face": {
+      "tooSmall": "üz təsnifatçı üçün çox kiçikdir",
+      "unavailable": "üz təsnifatçısı əlçatan deyil"
+    }
+  },
+  "pdf": {
+    "header": "{app}  |  Təsvirin rəqəmsal ekspertiza hesabatı",
+    "headerRight": "İş {id}  |  MƏXFİ",
+    "hashFooter": "Obyektin SHA-256-sı: {sha}",
+    "page": "Səhifə {n} / {total}",
+    "title": "Təsvirin rəqəmsal ekspertiza hesabatı",
+    "subtitle": "İş {id}  ·  Hesabat {date} tarixində hazırlanıb  ·  {app} avtomatik analizi",
+    "assessment": "HƏQİQİLİK QİYMƏTLƏNDİRMƏSİ",
+    "summary": "Sübutun gücü: {strength}  ·  Aşkarlama inamı: {indicator}  ·  Siqnallar: {ai} Sİ-yə, {cam} kameraya, {edit} emal/redaktə, {unrel} etibarsız",
+    "noReliable": "etibarlı qiymət yoxdur",
+    "noReliableSmall": "etibarlı qiymət yoxdur (təsvir çox kiçikdir)",
+    "notDetermined": "müəyyən edilməyib",
+    "evidenceItem": "Tədqiqat obyekti",
+    "caseId": "İş / yoxlama nömrəsi",
+    "filename": "İlkin fayl adı",
+    "received": "Analiz üçün qəbul olunub",
+    "format": "Format",
+    "dimensions": "Ölçülər",
+    "fileSize": "Faylın həcmi",
+    "bytes": "{n} bayt",
+    "integrity": "Bütövlük bəyanatı: yuxarıdakı SHA-256 heşi alınmış baytların dəqiq nüsxəsi üzrə, hər hansı emaldan əvvəl hesablanıb. Fayl yaddaşda təhlil olunub, icra edilməyib və dəyişdirilməyib; heşi üst-üstə düşən istənilən nüsxə tədqiq olunmuş obyektlə bit-bit eynidir.",
+    "s1": "1. Həqiqilik qiymətləndirməsi",
+    "how": "Nəticə necə əldə olunub",
+    "evFor": "Sİ ilə yaradılma lehinə sübutlar",
+    "evAgainst": "Sİ ilə yaradılma əleyhinə sübutlar",
+    "evEdit": "Emal və redaktə əlamətləri",
+    "noneFound": "Aşkarlanmayıb.",
+    "next": "Tövsiyə olunan addımlar",
+    "s2": "2. Aşkarlanan siqnallar",
+    "s2note": "Hər siqnal müstəqil ölçülür və ilkin dəyəri ilə göstərilir. Heç bir siqnal ehtimala çevrilmir, siqnallar ortalanmır.",
+    "colSignal": "Siqnal",
+    "colValue": "Dəyər",
+    "colStatus": "Status",
+    "colFinding": "Nəticə və izah",
+    "s3": "3. Hadisələrin xronologiyası",
+    "colTime": "Vaxt",
+    "colSource": "Mənbə",
+    "colField": "Sahə",
+    "colMeaning": "Mənası",
+    "tzNote": "(saat qurşağı: {tz})",
+    "checks": "Uyğunluq yoxlamaları",
+    "colResult": "Nəticə",
+    "colCheck": "Yoxlama",
+    "colDetail": "Təfərrüat və şərh",
+    "history": "Qeydə alınmış redaktə tarixçəsi (XMP)",
+    "colWhen": "Nə vaxt",
+    "colAction": "Əməliyyat",
+    "colSoftware": "Proqram",
+    "noTimeline": "Bu yoxlama üçün xronologiya əlçatan deyil (analiz xronologiya modulu yaranmazdan əvvəl aparılıb).",
+    "s4": "4. Ekspertiza sübutları — əlavələr",
+    "exA": "Əlavə A — orijinal (yenidən kodlaşdırılmış önbaxış)",
+    "exB": "Əlavə B — detektorun örtmə xəritəsi",
+    "exC": "Əlavə C — aşkarlanmış üzlər",
+    "exD": "Əlavə D — xəta səviyyəsi analizi",
+    "exNote": "Əlavə B təsvir sahələrini örtüb detektoru təkrar işə salmaqla qurulub; Əlavə D təkrar JPEG sıxılmasının real qalıqlarını göstərir. Heç biri dekorativ “istilik xəritəsi” deyil.",
+    "faces": "Üz analizi",
+    "colBox": "Çərçivə (x, y, w, h)",
+    "colDet": "Aşkarlama etibarlılığı",
+    "colManip": "Dəyişdirmə qiyməti",
+    "colFlagged": "Qeyd olunub",
+    "yes": "bəli",
+    "no": "xeyr",
+    "s5": "5. Texniki metaməlumatlar",
+    "camera": "Kamera",
+    "notPresent": "yoxdur",
+    "swTag": "Software teqi",
+    "creatorTool": "XMP yaradan proqram",
+    "editSw": "Redaktor proqramlar",
+    "noneDetected": "aşkarlanmayıb",
+    "aiMarkers": "Sİ generator markerləri",
+    "c2pa": "C2PA",
+    "c2paPresent": "var",
+    "c2paNotFound": "tapılmadı",
+    "jpegQ": "JPEG keyfiyyəti",
+    "ela": "ELA",
+    "elaValue": "orta {mean}, p99 {p99}, qeyri-bircinslik {nu}",
+    "exifFields": "EXIF sahələri (GPS koordinatları gizlədilib)",
+    "colTag": "Teq",
+    "s6": "6. Metodologiya və modellər",
+    "colComponent": "Komponent",
+    "colModel": "Model / metod",
+    "colLicense": "Lisenziya",
+    "compAi": "Sİ-təsvir detektoru",
+    "compFace": "Üzlərin aşkarlanması",
+    "compFaceManip": "Üz dəyişdirmə",
+    "multiview": "SwinV2 təsvirin 7 görünüşündə qiymətləndirilir (tam, güzgü, yarılar, mərkəzi kəsik); median göstərilir və görünüşlərin 80%-dən azı razılaşdıqda nəticə etibarsız sayılır. Community Forensics modelləri müəllifin ilkin emalından (qısa tərəf 440 px, mərkəzi kəsik 384 px) və qərar sərhədindən istifadə edir. Əlaqəli modellər yalnız razılaşdıqda birlikdə səs verir. Vaxt yoxlamaları EXIF, XMP, GPS və redaktə tarixçəsi tarixlərini müqayisə edir.",
+    "s7": "7. Analizin məhdudiyyətləri",
+    "declaration": "Bəyanat: bu hesabat {app} tərəfindən avtomatik hazırlanıb. O, sübut deyil, göstəricilər təqdim edir və ixtisaslı ekspertin rəyini əvəz etmir. Heç bir avtomatik metod təsvirin həqiqi olduğuna və ya Sİ ilə yaradıldığına zəmanət verə bilməz.",
+    "detectors": "Sİ detektorlarının nəticələri",
+    "colDetector": "Detektor (ailə)",
+    "colDecision": "Qərar",
+    "colScore": "Bal və növ",
+    "colRule": "Qərar qaydası",
+    "confNote": "Aşkarlama inamı müstəqil detektor ailələrinin razılığıdır, ehtimal deyil. Kalibrə olunmuş ehtimal göstərilmir."
+  },
+  "decision": {
+    "ai": "Sİ",
+    "real": "Sİ deyil",
+    "uncertain": "qeyri-müəyyən",
+    "unreliable": "etibarsız"
+  },
+  "confidence": {
+    "high": "Yüksək",
+    "moderate": "Orta",
+    "limited": "Məhdud",
+    "conflict": "Ziddiyyətli",
+    "none": "Yoxdur"
+  },
+  "scoreKind": {
+    "raw": "modelin xam çıxışı (kalibrə olunmayıb)",
+    "vendor_calibrated": "model müəllifinin kalibrləməsi (bizim məlumatlarda yoxlanılmayıb)"
+  }
+}

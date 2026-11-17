@@ -1,0 +1,79 @@
+{
+ "run": "run_20261117_150417",
+ "images_evaluated": 23,
+ "independent_source_images": 21,
+ "derived_images": 2,
+ "outcomes": {
+  "correct": 16,
+  "incorrect": 4,
+  "inconclusive": 3
+ },
+ "accuracy_on_decided": 0.8,
+ "accuracy_strict": 0.696,
+ "accuracy_source_weighted": 0.69,
+ "ai_involvement": {
+  "definition": "positive = AI_GENERATED, AI_EDITED, MIXED; negative = REAL, MANUALLY_EDITED; predicted positive = 'Likely AI-generated'; 'Inconclusive' = abstention",
+  "n": 23,
+  "positives": 8,
+  "negatives": 15,
+  "TP": 5,
+  "FP": 0,
+  "TN": 12,
+  "FN": 3,
+  "abstained_on_positives": 0,
+  "abstained_on_negatives": 3,
+  "coverage": 0.87,
+  "precision": 1.0,
+  "precision_95ci": [
+   0.566,
+   1
+  ],
+  "recall_on_decided": 0.625,
+  "recall_95ci": [
+   0.306,
+   0.863
+  ],
+  "recall_strict": 0.625,
+  "f1_on_decided": 0.769,
+  "false_positive_rate": 0.0,
+  "false_positive_rate_95ci": [
+   0,
+   0.243
+  ]
+ },
+ "editing": {
+  "definition": "edited = MANUALLY_EDITED, AI_EDITED, MIXED or secondary MANUALLY_EDITED; flagged = 'Potential manipulation'",
+  "edited_images": 2,
+  "flagged_as_edited": 0,
+  "edit_detection_rate": 0.0,
+  "edit_detection_rate_95ci": [
+   0,
+   0.658
+  ],
+  "unedited_images": 21,
+  "false_edit_alarms": 0,
+  "false_edit_alarm_rate": 0.0
+ },
+ "processing_ms": {
+  "median": 2590.7,
+  "max": 4317.7
+ },
+ "models": [
+  {
+   "key": "swinv2_ai_detector",
+   "model": "haywoodsloan/ai-image-detector-deploy",
+   "license": "Apache-2.0",
+   "available": true,
+   "device": "cuda",
+   "error": null
+  },
+  {
+   "key": "vit_deepfake_faces",
+   "model": "prithivMLmods/Deep-Fake-Detector-v2-Model",
+   "license": "Apache-2.0",
+   "available": true,
+   "device": "cuda",
+   "error": null
+  }
+ ]
+}

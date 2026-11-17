@@ -1,0 +1,202 @@
+[
+ {
+  "id": "S01",
+  "file": "00_real_landscape_hopetoun_falls.jpg",
+  "label": "REAL",
+  "verdict": "manipulated_possible",
+  "outcome": "undecided",
+  "scores": {
+   "swinv2_ai_detector": 0.9901
+  }
+ },
+ {
+  "id": "S02",
+  "file": "01_real_portrait_armstrong.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0011
+  }
+ },
+ {
+  "id": "S03",
+  "file": "02_ai_stable_diffusion_comet.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "inconclusive",
+  "outcome": "undecided",
+  "scores": {
+   "swinv2_ai_detector": 0.1421
+  }
+ },
+ {
+  "id": "S04",
+  "file": "03_ai_artwork_mountains.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9997
+  }
+ },
+ {
+  "id": "S05",
+  "file": "ai_Images_generated_b_1.png",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9999
+  }
+ },
+ {
+  "id": "S06",
+  "file": "ai_Images_generated_b_2.png",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9417
+  }
+ },
+ {
+  "id": "S07",
+  "file": "ai_Images_generated_b_3.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9997
+  }
+ },
+ {
+  "id": "S08",
+  "file": "ai_Images_generated_b_4.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "inconclusive",
+  "outcome": "undecided",
+  "scores": {
+   "swinv2_ai_detector": 0.0796
+  }
+ },
+ {
+  "id": "S09",
+  "file": "ai_Images_generated_b_5.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9999
+  }
+ },
+ {
+  "id": "S10",
+  "file": "ai_Images_generated_b_0.png",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9978
+  }
+ },
+ {
+  "id": "S11",
+  "file": "ai_Images_generated_b_1.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9997
+  }
+ },
+ {
+  "id": "S12",
+  "file": "user_TL-DAB7E77C91C4.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0012
+  }
+ },
+ {
+  "id": "S13",
+  "file": "user_TL-693377B71DEA.jpg",
+  "label": "AI_GENERATED",
+  "verdict": "ai_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.9987
+  }
+ },
+ {
+  "id": "S14",
+  "file": "real_people_7.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0017
+  }
+ },
+ {
+  "id": "S15",
+  "file": "real_people_6.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0074
+  }
+ },
+ {
+  "id": "S16",
+  "file": "real_people_5.jpg",
+  "label": "REAL",
+  "verdict": "inconclusive",
+  "outcome": "undecided",
+  "scores": {
+   "swinv2_ai_detector": 0.134
+  }
+ },
+ {
+  "id": "S17",
+  "file": "real_people_4.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.002
+  }
+ },
+ {
+  "id": "S18",
+  "file": "real_people_3.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0335
+  }
+ },
+ {
+  "id": "S19",
+  "file": "real_people_2.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0021
+  }
+ },
+ {
+  "id": "S20",
+  "file": "real_people_1.jpg",
+  "label": "REAL",
+  "verdict": "authentic_likely",
+  "outcome": "correct",
+  "scores": {
+   "swinv2_ai_detector": 0.0003
+  }
+ }
+]
